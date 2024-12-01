@@ -58,5 +58,5 @@ Templates - Folder with master script templates in .docx format. A
 Minimal list of files needed to run this tool:
 
 	ARISS_mod_script_gen.py (or the native binary)
-	ARISS_mod_script_form.txt
-	ARISS_mod_script_temp.docx
+	ARISS_mod_script_form.txt - working form file
+	ARISS_mod_script_temp.docx - working template
