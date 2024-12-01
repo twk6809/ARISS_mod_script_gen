@@ -1,0 +1,17 @@
+| NAME: ARISS Moderator Script Generator
+| BY: Ken McCaughey (N3FZX)
+| ON: 2024-11-30
+| PROJECT: ARISS
+| SCRIPT: ARISS_mod_script_gen.py
+| VERSION: 3.0.0
+| STATUS: Final version.
+| SPDX-FileCopyrightText: 2024 Ken McCaughey
+| SPDX-License-Identifier: Creative Commons Attribution-ShareAlike 4.0
+
+PURPOSE:
+  Help create an ARISS Moderator Script used for ISS school contacts.
+  It is based on a template and a file containing variables. Basically
+  works like a mail merge. Takes care of the script timeline and time math.
+
+DISCLAIMER:
+  This free software is provided as is.
