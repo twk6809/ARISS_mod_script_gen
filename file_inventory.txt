@@ -17,10 +17,6 @@ ARISS_mod_script_form_blank.txt - Master copy of the input form. This file
     
 ARISS_mod_script_gen.py - The Python script for this tool.
 
-ARISS_mod_script_gen.spec - This is the parameter file used by pyinstaller 
-	to make a native binary of the tool. See the HELPER file for more 
-	information.
-    
 ARISS_mod_script_temp_master_universal.docx - Universal master template 
 	of the script. Always make a working copy first. Copy and rename to
 	ARISS_mod_script_temp.docx.

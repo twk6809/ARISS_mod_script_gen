@@ -268,9 +268,11 @@ at the command line. A bunch of messages will scroll by and, if successful,
 end with something similar to the following:
 
 ```
-	##### INFO: Appending PKG archive to custom ELF section in EXE
 	##### INFO: Building EXE from EXE-00.toc completed successfully.
 ```
+
+This will also create a file called `ARISS_mod_script_gen.spec`. The file
+has the parameters from the last time the `pyinstaller` was run. 
 
 In all cases additional two folders will be created, `build` and `dist`. 
 The files in the `build` do not need to be saved. The file in the `dist`
@@ -289,12 +291,7 @@ To run the native executable, in a terminal window, enter `ARISS_mod_script_gen`
   with the ARISS Moderator Script files. 
 - On Linux/Rasp Pi command line (all on one line):
 
-  `pyinstaller --clean -w -F -i "ARISS_logo_simple.ico"   ARISS_mod_script_gen.py`
-
-- If a .spec files exists,on the command line enter: 
-
-  `pyinstaller ARISS_mod_script_gen.spec`
-
+  `pyinstaller --clean -F -i "ARISS_logo_simple.ico" ARISS_mod_script_gen.py`
 
 #### Make a Windows Executable
 
@@ -303,11 +300,7 @@ To run the native executable, in a terminal window, enter `ARISS_mod_script_gen`
   with the ARISS Moderator Script files. 
 - On Windows command line (all on one line):
   
-  `pyinstaller --clean -w -F -i "ARISS_logo_simple.ico" ARISS_mod_script_gen.py`
-
-- If a .spec files exists,on the command line enter: 
-
-  `pyinstaller ARISS_mod_script_gen.spec`
+  `pyinstaller --clean --console -F -i "ARISS_logo_simple.ico" ARISS_mod_script_gen.py`
                   
 #### Make a Mac Executable
 
@@ -316,11 +309,7 @@ To run the native executable, in a terminal window, enter `ARISS_mod_script_gen`
   with the ARISS Moderator Script files. 
 - On Mac command line (all on one line):
 
-  `pyinstaller --clean -w -F -i "ARISS_logo_simple.ico"   ARISS_mod_script_gen.py`
-
-- If a .spec files exists,on the command line enter: 
-
-  `pyinstaller ARISS_mod_script_gen.spec`
+  `pyinstaller --clean --console -F -i "ARISS_logo_simple.ico"   ARISS_mod_script_gen.py`
   
 <div style="page-break-after: always;"></div>
 
