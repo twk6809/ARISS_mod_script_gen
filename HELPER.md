@@ -8,9 +8,11 @@ Ver 3.0.0
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
 
 This file provides helpful information for users new to Python to help run 
-the ARISS Moderator Script Generator. The README file has information on 
-how the tool works. This file has information on how to setup Python and 
-run the tool.  
+the ARISS Moderator Script Generator. You do not need to know Python to run this tool! 
+
+The README file has information on how the tool works. This file has
+information on how to setup Python and run the tool. This is were known 
+issues are documented and additional tips reside.
 
 
 Contents
@@ -28,7 +30,7 @@ Contents
 * Creating a Native Executable
   - Install `pyinstaller`
   - Running  `pyinstaller`
-* Known Issues
+* Known Issues and Tips
 
 <div style="page-break-after: always;"></div>
 
@@ -84,7 +86,7 @@ It is free and runs on Linux (and Raspberry Pi's), Macs, and Windows. It
 also bring along its own Python installation. Installing Thonny gets you 
 a good tool and Python in one step. This is recommended for Python 
 beginners. The software may be in your machine's software repository (or
-store). Or the files for your OS can be found at `https://thonny.org/`.  
+store). Or the files for your OS can be found at `https://thonny.org/`. 
 The wiki for Thonny can be found at `https://github.com/thonny/thonny/wiki`.
 
 Once installed, turn on the file viewer. In Thonny, from the main toolbar click on `View` then click to add a check mark for  `Files`. It will 
@@ -236,12 +238,18 @@ Python Script Done
 Creating a Native Executable
 ----------------------------
 
-It is possible to make an executable for you operating system. You need to
-have Python installed. It can be done with Thonny. The advantage is that 
-you can just run it without having to fuss this Python or Thonny. There is
-some limited portability to copy and run the executable on other machines. 
-The disadvantage is that you need to create and test a new executable with
-every update that comes out.
+A native binary may be included on the GitHub page for this project. If it
+exists, it will be in a separate folder that denotes the OS. If it exists,
+download it and place the binary file in the `ARISS_mod_script_gen` folder
+with all the other files. If it is not already available for you OS, you 
+can create one with the steps below.
+
+It is possible to make an executable for your operating system. You need 
+to have Python installed. It can be done with Thonny. The advantage is 
+that you can just run it without having to fuss this Python or Thonny. 
+There is some limited portability to copy and run the executable on other
+machines. The disadvantage is that you need to create and test a new
+executable with every update that comes out.
 
 Creating a native executable requires an extra file, `ARISS_logo_simple.ico`.
 
@@ -316,34 +324,52 @@ To run the native executable, in a terminal window, enter `ARISS_mod_script_gen`
   
 <div style="page-break-after: always;"></div>
 
-Known Issues
-------------
+Known Issues and Tips
+---------------------
 
-There is some error checking, but it is not foolproof. If you get errors
-or have issues take a look below first.
+**If you get errors or have issues take a look below first.**
+
+Before starting a new script, clear out any old forms, working templates, 
+and scripts.
+
+The tool can generate an outline report with just the **ISS rise time** and
+the **conference start time**. The script will be very incomplete, but the
+outline file is usable to aid in early event planning.
 
 If running in Thonny, make sure the `ARISS_mod_script_gen` tab is active 
 before clicking on `Run`. If another tab, such as the form is open and the
-active tab, it will try to run what is ion the form, which is not Python, 
+active tab, it will try to run what is in the form, which is not Python, 
 and generate lots of errors. This is easy to do! Just make the tab with the
 script the active one an run it.
 
-The tool can fail if the expected file names are not as expected. The input file names are fixed in the Python code.
+The tool can fail if the expected file names are not as expected. The input file names are fixed in the Python code. See the README file.
 
-Misspelled variable name(s) will not get properly populated. Do not 
-change the variable names. If new variables are needed, contact the author.
+Misspelled variable name(s) in the form, or the template, will not get
+properly populated. Do not change the variable names. If new variables are
+needed, contact the author.
 
-If a variable in the form is not known, or not going to be used, do not 
-change the value in the form. For example if the live stream operator will 
-not be used, leave form value as `{{livestream_name}}`.
+If the value of a variable in the form is not known, or not going to be 
+used, do not change the value in the form. For example if the live stream
+operator will not be used, leave form default value as `{{livestream_name}}`.
 
-If the form files becomes corrupted the tool will fail. Corruptions could
+If the form file becomes corrupted the tool will fail. Corruptions could
 be an inadvertently changed variable name, invalid date/time format, a
 carriage return (line break) in the middle of a variable. One sure way to
 recover is to delete the form file and an make a new one from the
-`ARISS_mod_script_form_blanl.txt file`. Note that whenever the tool is run 
-a new blank form is created. 
+`ARISS_mod_script_form_blanl.txt file`. Whenever the tool is run a new 
+blank form is created. 
 
-Do not use the `#` character in any variables. This is interpreted at a
-comment and ignores everything afterwards until a carriage return (line
-break).
+In the form file, do not use the `#` character in any variables. This is
+interpreted at a comment and ignores everything afterwards until a carriage
+return (line break).
+
+Over time more templates may be added, or they maybe updated. You can
+create your own versions to suit your needs. Just be aware the tool is 
+built around event blocks that take discrete amounts of time to complete. 
+If you deviate from the formula of this design it can create more work and
+good results cannot be guaranteed.
+
+Pay attention to the status of the ARISS videos in the form file. The use,
+or not, of these changes the timeline calculation. For the
+`ARISS_mod_script_temp_master_short.docx` template, make sure both ARISS videos are set to `No`. For `ARISS_mod_script_temp_master_long.docx`, make
+sure both ARISS videos are set to `Yes`. 
