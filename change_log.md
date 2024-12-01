@@ -4,8 +4,8 @@ ARISS Moderator Script Generator - Change Log
 This record only covers official releases and not any interim development
 versions.  
 
-V3.0.0- 2024-11-30
-------------------
+V3.0.0 - 2024-11-30
+-------------------
 - Additional changes to the variable list. Added variables for live 
   streaming and the two ARISS videos. Changed the AOS and LOS nomenclature 
   to ISS rise and set times.
