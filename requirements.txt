@@ -1,3 +1,10 @@
+# ARISS Moderator Script Generator - Required Python Libraries
+#   By: Ken McCaughey (N3FZX)  
+#   On: 2024-11-30   
+#   Ver 3.0.0 
+#
+# Made using pipreqs.
+#
 docx==0.2.4
 docxtpl==0.19.0
 python_docx==1.1.2
