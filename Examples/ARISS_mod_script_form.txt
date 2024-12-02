@@ -101,7 +101,7 @@ Tele-bridge operator name: Harriet Conklin
 Tele-bridge operator callsign: KH3CON
 
 # Tele-bridge audio interface options: Verizon, Zoom Dial-in, Zoom Video, etc.
-Tele-bridge audio interface: Verison
+Tele-bridge audio interface: Verizon
 
 # Tele-bridge video interface options: None, Zoom, Google Meet, etc.
 Tele-bridge video interface: Zoom
