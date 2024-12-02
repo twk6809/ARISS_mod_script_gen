@@ -54,9 +54,7 @@ MAKING EXECUTABLE VERSIONS:
   - On Linux use command line:
       pyinstaller --clean -w -F -i "ARISS_logo_simple.ico" ARISS_mod_script_gen.py
   - Windows 10 pyinstaller command line
-      pyinstaller -w -F -i "ARISS_logo_simple.ico" --add-data ARISS_logo.png;
-                  --add-data ARISS_logo_simple.ico; ARISS_mod_script_gen.py
-  - If a .spec files exists,on the command line enter: "pyinstaller ARISS_mod_script_gen.spec"
+      pyinstaller --clean --console -F -i "ARISS_logo_simple.ico" ARISS_mod_script_gen.py
 
 EXTERNAL CREDITS:
   How to Generate Automated Word Documents with Python
