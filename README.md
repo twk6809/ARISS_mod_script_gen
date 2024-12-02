@@ -1,5 +1,5 @@
-ARISS Moderator Script Generator Tool - READ ME File
-====================================================
+ARISS Moderator Script Generator - READ ME
+==========================================
 By: Ken McCaughey (N3FZX)  
 On: 2024-11-30   
 Ver 3.0.0   
