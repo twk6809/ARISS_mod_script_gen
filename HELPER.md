@@ -1,5 +1,5 @@
-ARISS Moderator Script Generator - Helper File
-==============================================
+ARISS Moderator Script Generator - Helper
+=========================================
 By: Ken McCaughey (N3FZX)  
 On: 2024-11-30   
 Ver 3.0.0   
@@ -156,8 +156,8 @@ Download the Zipped package from GitHub at:
 
 	https://github.com/twk6809/ARISS_mod_script_gen 
  
-Unzip the GitHub file `ARISS_mod_script_gen.zip`. Find the the 
-`ARISS_mod_script_get` folder and copy to the `Python_projects` folder.
+Unzip the GitHub file `ARISS_mod_script_gen-main.zip`. Find the the 
+`ARISS_mod_script_get-main` folder and copy to the `Python_projects` folder.
 
 <div style="page-break-after: always;"></div>
 
@@ -331,11 +331,12 @@ active tab, it will try to run what is in the form, which is not Python,
 and generate lots of errors. This is easy to do! Just make the tab with the
 script the active one an run it.
 
-The tool can fail if the expected file names are not as expected. The input file names are fixed in the Python code. See the README file.
+The tool can fail if the expected file names are not as expected. The input 
+file names are fixed in the Python code. See the README file.
 
-Misspelled variable name(s) in the form, or the template, will not get
-properly populated. Do not change the variable names. If new variables are
-needed, contact the author.
+Misspelled field or variable name(s) in the form, or the template, will not 
+get properly populated. Do not change the field or variable names. If new 
+ones are needed, contact the author.
 
 If the value of a variable in the form is not known, or not going to be 
 used, do not change the value in the form. For example if the live stream
