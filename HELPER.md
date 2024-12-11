@@ -89,13 +89,19 @@ beginners. The software may be in your machine's software repository (or
 store). Or the files for your OS can be found at `https://thonny.org/`. 
 The wiki for Thonny can be found at `https://github.com/thonny/thonny/wiki`.
 
-Once installed, turn on the file viewer. In Thonny, from the main toolbar click on `View` then click to add a check mark for  `Files`. It will 
-add a sub-window to the left side. When you are running the script this should be set to your working directory with all the ARISS Moderator Script files. 
+For Windows and the Mac it is best to install for current user only, not
+all users. This should not require admin privileges. 
+
+Once installed, turn on the file viewer. In Thonny, from the main toolbar 
+click on `View` then click to add a check mark for  `Files`. It will 
+add a sub-window to the left side. When you are running the script this 
+should be set to your working directory with all the ARISS Moderator Script
+files. 
 
 ### Installing Thonny on a Mac
 
 A good guide for installing Thonny on Mac is at the link below. It also 
-has some instructions for adding libraries.  
+has some instructions for adding libraries. 
 
 `https://www2.seas.gwu.edu/~cs4all/1012/editor-install/thonny-mac.html`
 
@@ -280,7 +286,9 @@ folder is the native binary executable. This file should be copied to the
 with all the other ARISS Moderator Script files. A shortcut can be made if
 desired, but setup to run in a terminal window. 
 
-To run the native executable, in a terminal window, enter `ARISS_mod_script_gen`. 
+To run the native executable, in a terminal window, enter
+`ARISS_mod_script_gen`. Be aware the native executables for Windows and 
+the Mac might trip virus protection software.
 
 <div style="page-break-after: always;"></div>
 
@@ -321,6 +329,9 @@ Known Issues and Tips
 Before starting a new script, clear out any old forms, working templates, 
 and scripts.
 
+Be aware the native executables for Windows and the Mac might trip virus
+protection software.
+
 The tool can generate an outline report with just the **ISS rise time** and
 the **conference start time**. The script will be very incomplete, but the
 outline file is usable to aid in early event planning.
@@ -328,8 +339,7 @@ outline file is usable to aid in early event planning.
 If running in Thonny, make sure the `ARISS_mod_script_gen` tab is active 
 before clicking on `Run`. If another tab, such as the form is open and the
 active tab, it will try to run what is in the form, which is not Python, 
-and generate lots of errors. This is easy to do! Just make the tab with the
-script the active one an run it.
+and generate lots of errors. This is easy to do! 
 
 The tool can fail if the expected file names are not as expected. The input 
 file names are fixed in the Python code. See the README file.
