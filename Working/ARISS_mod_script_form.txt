@@ -1,0 +1,206 @@
+# ARISS Moderator Script Generator Form
+# =====================================
+#   By: Ken McCaughey (N3FZX)
+#   On: 2024-11-30
+#   Ver 3.0.0
+#
+# This form is used to generate an ARISS moderator script.
+# The Python script ARISS_mod_script_gen.py will read this
+# form and combine with a script template to create a
+# complete moderator script in a properly formatted MS-WORD
+# document and a timeline report.
+#
+# The script timeline is calculated based on estimated durations
+# of the event blocks.
+#
+# ARISS Moderator Script Generator Form
+# =====================================
+#   By: Ken McCaughey (N3FZX)
+#   On: 2024-11-30
+#   Ver 3.0.0
+#
+# This form is used to generate an ARISS moderator script.
+# The Python script ARISS_mod_script_gen.py will read this
+# form and combine with a script template to create a
+# complete moderator script in a properly formatted MS-WORD
+# document and a timeline report.
+#
+# The script timeline is calculated based on estimated durations
+# of the event blocks defined in the Timeline Assumptions section.
+#
+# THINGS TO KNOW ABOUT THIS FORM:
+#
+#   Lines that begin with a "#" are comments.
+#     Feel free to add more comments to make notes.
+#   The form consists of a list of field names and variables.
+#     Field name: {{variable}}
+#     School/group name: {{school_group_name}}
+#     ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+#     ^---Field name     ^---Variable name
+#   Field names MUST be separated from variables by a colon+space.
+#     ": "
+#
+# INSTRUCTIONS:
+#
+#   Replace the variables, including {{ and }}, with known data.
+#   For example:
+#     School/group name: {{school_group_name}}
+#     School/group name: My school
+#   Be sure to update the version number if doing a revision.
+#   Do NOT change the field names.
+#   Do NOT leave blank variables. 
+#     Leave default values if unknown.
+#     Or use None or N/A if it will not be used.
+#   Do NOT add or remove lines, except for comments.
+#   Do NOT use line breaks, carriage returns or hard word wrap
+#     for any long lines.
+#   Adjust timeline event block durations only as needed.
+#
+
+# === START HERE ===
+
+# ==============
+# Script version
+# ==============
+# Update this each time just before a new WORD doc is generated.
+Script version: 1
+
+# Short one word nickname to be added to the output filenames.
+Short name: Example
+
+# =========================
+# Important Dates and Times
+# =========================
+# Only enter numbers in the specified formats.
+Date of contact (YYYY-MM-DD): 2024-11-30
+
+# Conference typically starts 1 hour before ISS Rise & AOS.
+Start of conference in UTC time (HH:mm): 01:00
+Start of conference school time (HH:mm): 02:00
+
+# Round down ISS rise time to the nearest minute.
+ISS rise in UTC time (HH:mm): 03:00
+ISS rise school time (HH:mm): 04:00
+
+# ========================
+# School/Group Information
+# ========================
+School/group name: Madison High School
+School/group location: Springfield, USA
+Coordinator/teacher at venue: Walter Denton
+School principal name: Osgood Conklin
+School teacher name: Miss Brooks
+
+# ===============
+# ISS Information
+# ===============
+Astronaut name: Major Tom
+Astronaut callsign: KM5TOM
+ISS callsign to be used: NA1SS
+
+# ===========================
+# ARISS Moderator Information
+# ===========================
+Moderator name: Margaret Davis
+Moderator callsign: KM1DAV
+Moderator will be On-site/Remote for the contact: On-site
+
+# ========================
+# ARISS Mentor Information
+# ========================
+Mentor name: Philip Boynton
+Mentor callsign: KP2BOY
+Mentor will be On-site/Remote for the contact: Remote
+
+# ================================
+# ARISS Tele-bridge Ground Station
+# ================================
+Tele-bridge station callsign: K6DUE
+Tele-bridge station location: Greenbelt. MD, USA
+Tele-bridge operator name: Harriet Conklin
+Tele-bridge operator callsign: KH3CON
+
+# Tele-bridge audio interface options: Verizon, Zoom Dial-in, Zoom Video, etc.
+Tele-bridge audio interface: Verizon
+
+# Tele-bridge video interface options: None, Zoom, Google Meet, etc.
+Tele-bridge video interface: Zoom
+
+# =====================
+# ARISS Optional Videos
+# =====================
+# Default is Yes. Change to No to remove from the timeline.
+Contact from student perspective (Yes/No): Yes
+Contact from the ISS perspective (Yes/No): Yes
+
+# ==============
+# Live Streaming
+#===============
+Live stream planned (Yes/No): Yes
+Live stream operator name: Fabian "Stretch" Snodgrass
+Live stream operator callsign: No Call
+
+
+# ====================
+# Timeline assumptions
+# ====================
+# Below are the Event Blocks Duration estimates used for the
+#    timeline calculations. Defaults are based on experience.
+#    Default values are listed in the comments for reference.
+#    All durations are integer minutes.
+#    ONLY change these if necessary.
+
+# Event - Start conference.
+# Default duration = 3 min
+D01: 3
+
+# Event - Moderator ground station checklist.
+# Default duration = 2 min
+D02: 2
+
+# Event - Contact preparation checklist.
+# Default duration = 5 min
+D03: 5
+
+# Event - Run through with all students and ground station.
+# Default duration = 10 min
+D04: 10
+
+# Event - Start school/group program or slack time.
+# Nothing to change here.
+# The script calculates D05 time as a remainder of time left.
+
+# Event - Start ARISS program.
+# Default duration = 1 min
+D06: 1
+
+# Event - ARISS introduction.
+# Default duration = 4 min
+D07: 4
+
+# OPTIONAL Event - Video of ARISS contact from student perspective.
+# Default duration = 6 min
+D08: 6
+
+# OPTIONAL Event- Video of ARISS contact from ISS perspective.
+# Default duration = 3 min
+D09: 3
+
+# Event - Introduce the ground station.
+# Default duration = 3 min
+D10: 3
+
+# Event - Handover to ground station.
+# Default duration = 1 min
+D11: 1
+
+# Event - ISS contact!
+# Default duration = 1 min
+D12: 1
+
+# Event - Closing remarks & end of ARISS program.
+# Default duration = 3 min
+D13: 3
+
+# End of form
+
