@@ -319,15 +319,15 @@ Instructions and Work Flow
      
 10. **REVISE** a distributed version if needed...
 
-   - **EDIT** the form file, change the version number and anything else.
+    - **EDIT** the form file, change the version number and anything else.
    
-   - **EDIT** the template file as needed.
+    - **EDIT** the template file as needed.
    
-   - **RUN** the Python tool.
+    - **RUN** the Python tool.
    
-   - **REVIEW** output files
+    - **REVIEW** output files
    
-   - **MAKE** PDF and distribute.   
+    - **MAKE** PDF and distribute.   
      
 
 <div style="page-break-after: always;"></div>
