@@ -1,7 +1,7 @@
 ARISS Moderator Script Generator - READ ME
 ==========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-02-16   
+On: 2025-03-26   
 Ver 3.0.1   
 
 <!-- In MarkDownd format. -->
@@ -20,7 +20,7 @@ Contents
 
 Goals
 -----
-This tool helps create an ARISS Moderator Script used for ISS school 
+This tool helps create an ARISS Moderator Script used for ISS telebridge 
 contacts.  
 
 The goals of this tool are to:    
@@ -73,50 +73,49 @@ Setup
 
 Before you begin, make sure things are set up correctly.
 
-1. DOWNLOAD from GitHub the files as a Zip file 
+1. **DOWNLOAD** from **GitHub** the files as a Zip file 
 
-	- CLICK on the green `<> Code` button and choose `Download ZIP`.
+	- **GET** the latest version at: https://github.com/twk6809/ARISS_mod_script_gen 
+
+	- **CLICK** on the green `<> Code` button and choose `Download ZIP`.
 	
-	- UNZIP and and folder called `ARISS_mod_script_gen-main` will appear.
+2. **UNZIP** and and folder called `ARISS_mod_script_gen-main` will appear.  
+	  
+   The following files in a folder called `ARISS_mod_script_gen-main`:  
+	  
+	  - `README.md` and/or `README.pdf` - this file
+      - `HELPER.md` and/or `HELPER.pdf` - more help with Python setup
+      - `ARISS_Python_Test.py` - test script
+      - `Working` - folder with the main files
+      - `Examples` - folder with sample output files
+      - `Templates` - folder with `docx` script template files
 	
-	- MOVE the folder structure to where ever you want it.
+3. **MOVE** the folder structure to where ever you want it.
 
-2. In a folder called `ARISS_mod_script_gen-main` make sure the following 
-   files are present:  
-
-     - `README.md` and/or `README.pdf` - this file)
-     - `HELPER.md` and/or `HELPER.pdf` - more help with Python setup
-     - `ARISS_Python_Test.py` - test script
-     - `Working` - folder with the main files
-     - `Examples` - folder with sample output files
-     - `Templates` - folder with `docx` script template files
-     
 <div style="page-break-after: always;"></div>
-
-3. In a folder called `ARISS_mod_script_gen-main/Working` make sure the
-   following files are present:  
-
-     - `ARISS_mod_script_form_blank.txt`
-     - `ARISS_mod_script_temp_master_universal.docx`  
-        There could be multiple master template files to choose from, 
-        or they could be in a folder called `Templates`.  
-     - `ARISS_mod_script_gen.py`
    
-4. This tool requires that Python 3.x is installed. 
+4. **CHECK** that you have Python 3.x is installed. 
 
-     - See `https://www.python.org/downloads/`
+	 - **ENTER** `python3 --version` in a terminal window.
 
-5. The Python script requires the `docxtlp` library.
+     - **INSTALL** if needed. See https://www.python.org/downloads/  
+       (Also see the **HELPER** file.)
 
-     - See https://pypi.org/project/docxtpl/   
+5. **CHECK** that you have the `docxtlp` library installed.
 
-6. Run the test script to confirm needed libraries are present.
+     - **ENTER** `pip show docxtpl` in a terminal window.  
+       (Need to be in your virtual environment.)
 
-     - Open a terminal window with a command line interface.
+     - **INSTALL** if needed. See https://pypi.org/project/docxtpl/   
+       (Also see the **HELPER** file.)
+
+6. **RUN** the test script to confirm needed libraries are present.
+
+     - **OPEN** a terminal window with a command line interface.
      
-     - Run test script: `ptyhon3 ARISS_Python_Test.py`
+     - **RUN** test script: `ptyhon3 ARISS_Python_Test.py`
      
-     - Output should reassemble...
+     - **CHECK** Output. Should reassemble...
 
 	 ```
 	 Python script: ARISS Python Test.py
@@ -139,18 +138,27 @@ Before you begin, make sure things are set up correctly.
 Instructions and Work Flow
 --------------------------
 
-1. MAKE a working folder.
+1. **MAKE** a working folder.
 
-   - COPY the `Working` folder to a new folder named for the ARISS event
+   - **COPY** the `Working` folder to a new folder named for the ARISS event
      or school name. 
      
-   - Make sure these two files are in the working folder:
+   - **CHECK** for these two files are in the working folder:
         * `ARISS_mod_script_gen.py`
         * `ARISS_mod_script_form_blank.txt`
-     
-2. MAKE a working script template `docx` file. 
 
-   - COPY the desired master `docx` template file to be used in the working
+2. **MAKE** a working input form file.
+
+   - **COPY** the file `ARISS_mod_script_form_blank.txt` and name it
+     `ARISS_mod_script_form.txt`. This file must be in the working folder.
+   
+   - **NOTE** running the Python script generates a new clean form file named 
+     `ARISS_mod_script_form_blank.txt` to ensure there is a good blank 
+     form available.
+     
+3. **MAKE** a working script template `docx` file. 
+
+   - **COPY** the desired master `docx` template file to be used in the working
      folder created in step 1. See the `Templates` folder for some options. 
      
         * For example, copy and rename `ARISS_mod_script_temp_master.docx` 
@@ -159,20 +167,11 @@ Instructions and Work Flow
         * The working template needs to be in the same working folder as 
           the Python script. The working template will be edited.
      
-   - There is a useful checklist on the last page of the template file.
-
-3. MAKE a working input form file.
-
-   - COPY the file `ARISS_mod_script_form_blank.txt` and name it
-     `ARISS_mod_script_form.txt`. This file must be in the working folder.
-   
-   - Running the Python script generates a new clean form file named 
-     `ARISS_mod_script_form_blank.txt` to ensure there is a blank 
-     form available.
+   - **NOTE**, there is a useful checklist on the last page of the template file.
        
 <div style="page-break-after: always;"></div>
 
-4. COMPLETE the text file form, `ARISS_mod_script_form.txt`.   
+4. **COMPLETE** the text file form, `ARISS_mod_script_form.txt`.   
 
    This should be done by the mentor and/or moderator. There are instructions
    within the file. Fill out as much as you can, or needed, using a text file
@@ -182,53 +181,56 @@ Instructions and Work Flow
    `Important Dates and Times`, and the `School/group name` need to be 
    completed in the form file.
      
-   - ENTER the following to get started:
+   - **ENTER** the following to get started:
         * Version number (start at 1)
-        * Short name to append to output file names (keep short)
+        * Short name to append to output file names (keep short, no spaces)
         * ISS rise times (UTC and local)
         * Conference start times (UTC and local)
         * School name
-        * Telebridge name (or local ham's info if direct)
-        * Which video are planned
+        * Telebridge name/callsign (or local ham's info if direct)
+        * Which video(s) are planned
       
-   - Do NOT leave blank variables.
+   - Do **NOT** leave blank variables.
         * Leave the default value if unknown.
         * Enter `None` or `N/A` is not used.
        
-5. EDIT the working template file `ARISS_mod_script_temp.docx`, 
+5. **EDIT** the working template file `ARISS_mod_script_temp.docx`, 
    not the `master`.  
 
    In general the provided templates should be sufficient to cover the needs
    for a contact without much editing. Edits should be based on the plans 
    for the contact in terms on event flow and planned components, such as 
-   videos and school/group program.
+   videos and school/group program. Some edit may be needed based on type of
+   conference being used (i.e. Verizon vs. Zoom).
    
-   - PASTE in the questions from ARISS Op Uplink file.
+   - **PASTE** in the questions from ARISS Ops Uplink file.
    
-   - EDIT the script text and add/remove cues and notes as needed.  
+   - **EDIT** the script text and add/remove cues and notes as needed.  
+     Most cues and notes are in red text.  
      (See dictionary of variable below.)
      
-   - REMOVE unused/optional blocks, such as the videos.
-        * DELETE table row to remove an optional event block.
-		* Do NOT add more event blocks or change the event block names.
+   - **REMOVE** unused/optional blocks, such as the videos.
+        * **DELETE** table row to remove an optional event block.
+		* Do **NOT** add more event blocks or change the event block names.
    	     
-   - REMOVE the red colored text script notes.
+   - **REMOVE** the red colored text script notes.
    
 <div style="page-break-after: always;"></div>
        
-6. RUN the Python script using an IDE or at the command line.  
+6. **RUN** the Python script using an IDE or at the command line.  
    See the `HELPER` file for information on running Python.
 
-   - The two input files must be in the same folder as the Python script.
-     The files must have the following names:
+   - **CHECK** input files. The two input files must be in the same folder 
+     as the Python script. The files must have the following names:  
         * Working template: `ARISS_mod_script_temp.docx`  
         * Working form: `ARISS_mod_script_form.txt` 
 
-   - Command line: `python3 ARISS_mod_script_gen.py`  
+   - **ENTER** `python3 ARISS_mod_script_gen.py` on the command line. 
 
-   - You will see some messages scroll across the screen. There is limited 
-     error checking. It will report success if there were no errors. Example
-     output messages from a successful run of the script.
+   - **CHECK** for messages to scroll across the screen. There is limited 
+     error checking. (See **Known Issues and Tips** below). It will report 
+     success if there were no errors. Example output messages from a 
+     successful run of the script.
      
   	 ```
 	 Python script: ARISS_mod_script_gen.py
@@ -264,15 +266,15 @@ Instructions and Work Flow
 	 Python Script Done
 	 ```
 
-   - Two new files will be generated. If they already existed, they will 
-     be overwritten. These are the final product files.
+   - **NOTE** two new files will be generated. If they already existed, they 
+     will be overwritten. These are the final product files.  
         * `ARISS_mod_script_<short_name>_V<ver#>.docx`  
         * `ARISS_mod_script_outline_<short_name>_V<ver#>.txt`  
 
-7. OPEN the new moderator script file and review it for completeness and 
+7. **OPEN** the new moderator script file and review it for completeness and 
    correctness.
 
-   - INSPECT the script. Does the script look right?
+   - **INSPECT** the script. Does the script look right?
         * Is the version number correct?
         * Does the outline look correct?
         * Are the moderator notes correct for the type of conference call?
@@ -281,50 +283,51 @@ Instructions and Work Flow
 
    If changes are needed, there are three ways to handle them.  
 
-   - EDIT the moderator script directly and save. This is best path for 
+   - **EDIT** the moderator script directly and save. This is best path for 
      minor edits if no more edits are anticipated and the Python script 
      will not be re-run.  
        
-   - EDIT the working template file and rerun the Python script. A new 
+   - **EDIT** the working template file and rerun the Python script. A new 
      `docx` file will be created and overwrite the old one. A new outline 
      file will be generated, overwriting the old one.
    
-   - UPDATE the form text file and rerun the Python script if it is related 
-     to a variable. A new `docx` file will be created and overwrite the old 
-     one. A new outline file will be generated, overwriting the old one.  
+   - **UPDATE** the form text file and **RERUN** the Python script if it is
+     related  to a variable. A new `docx` file will be created and overwrite 
+     the old one. A new outline file will be generated, overwriting the old
+     one.  
 
-8. UPDATE. If a version of the moderator script was distributed and needs
+8. **UPDATE**. If a version of the moderator script was distributed and needs
    to be updated, there are two ways to handle this.  
 
-   - EDIT the generated script `docx` file directly. Be sure to change the
+   - **EDIT** the generated script `docx` file directly. Be sure to change the
      version number on script cover page. Save with a new filename changing 
      the version number. This is a good option for minor final edits.
    
-   - UPDATE the form text file and rerun the Python script if it is related 
-     to a variable. Be sure to update the version number variable in the 
-     form. Then rerun the Python script. A new `docx` file will be created 
+   - **UPDATE** the form text file and **RERUN** the Python script if it is
+     related to a variable. Be sure to update the version number variable in 
+     the form. Then rerun the Python script. A new `docx` file will be created 
      along with a new timeline report file.  
 
 <div style="page-break-after: always;"></div>
 
-9. DISTRIBUTE the script.
+9. **DISTRIBUTE** the script.
 
-   - MAKE a PDF version of the script.
+   - **MAKE** a PDF version of the script.
    
-   - SEND out. OK to send the `docx` version, PDF recommend as well. PDF 
+   - **SEND** out. OK to send the `docx` version, PDF recommend as well. PDF 
      cannot be changed and its format/fonts are fixed.
      
-10. REVISE a distributed version if needed...
+10. **REVISE** a distributed version if needed...
 
-   - EDIT the form file, change the version number and anything else.
+   - **EDIT** the form file, change the version number and anything else.
    
-   - EDIT the template file as needed.
+   - **EDIT** the template file as needed.
    
-   - RUN the Python tool.
+   - **RUN** the Python tool.
    
-   - REVIEW output files
+   - **REVIEW** output files
    
-   - MADE PDF and distribute.   
+   - **MAKE** PDF and distribute.   
      
 
 <div style="page-break-after: always;"></div>
@@ -536,7 +539,7 @@ Over time more templates may be added, or they maybe updated. You can
 create your own versions to suit your needs. Just be aware the tool is 
 built around event blocks that take discrete amounts of time to complete. 
 If you deviate from the formula of this design it can create more work and
-good results cannot be guaranteed.
+good results cannot be guaranteed.  
 
 Pay attention to the status of the ARISS videos in the form file. The use,
 or not, of these changes the timeline calculation. For the

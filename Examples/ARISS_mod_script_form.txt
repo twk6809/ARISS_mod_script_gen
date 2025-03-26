@@ -13,14 +13,31 @@
 # The script timeline is calculated based on estimated durations
 # of the event blocks.
 #
+# ARISS Moderator Script Generator Form
+# =====================================
+#   By: Ken McCaughey (N3FZX)
+#   On: 2024-11-30
+#   Ver 3.0.0
+#
+# This form is used to generate an ARISS moderator script.
+# The Python script ARISS_mod_script_gen.py will read this
+# form and combine with a script template to create a
+# complete moderator script in a properly formatted MS-WORD
+# document and a timeline report.
+#
+# The script timeline is calculated based on estimated durations
+# of the event blocks defined in the Timeline Assumptions section.
+#
 # THINGS TO KNOW ABOUT THIS FORM:
 #
 #   Lines that begin with a "#" are comments.
-#   Feel free to add more comments to make notes.
+#     Feel free to add more comments to make notes.
 #   The form consists of a list of field names and variables.
 #     Field name: {{variable}}
 #     School/group name: {{school_group_name}}
-#   Field names must be separated from variables with a colon+space
+#     ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~
+#     ^---Field name     ^---Variable name
+#   Field names MUST be separated from variables by a colon+space.
 #     ": "
 #
 # INSTRUCTIONS:
@@ -31,6 +48,9 @@
 #     School/group name: My school
 #   Be sure to update the version number if doing a revision.
 #   Do NOT change the field names.
+#   Do NOT leave blank variables. 
+#     Leave default values if unknown.
+#     Or use None or N/A if it will not be used.
 #   Do NOT add or remove lines, except for comments.
 #   Do NOT use line breaks, carriage returns or hard word wrap
 #     for any long lines.
@@ -52,14 +72,14 @@ Short name: Example
 # Important Dates and Times
 # =========================
 # Only enter numbers in the specified formats.
-Date of contact (YYYY-MM-DD): 2024-11-30
+Date of contact (YYYY-MM-DD): 2025-03-26
 
 # Conference typically starts 1 hour before ISS Rise & AOS.
 Start of conference in UTC time (HH:mm): 01:00
-Start of conference school time (HH:mm): 02:00
+Start of conference school time (HH:mm): 03:00
 
 # Round down ISS rise time to the nearest minute.
-ISS rise in UTC time (HH:mm): 03:00
+ISS rise in UTC time (HH:mm): 02:00
 ISS rise school time (HH:mm): 04:00
 
 # ========================

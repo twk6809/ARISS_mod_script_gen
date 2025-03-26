@@ -1,7 +1,7 @@
 ARISS Moderator Script Generator - Helper
 =========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-02-16   
+On: 2025-03-26   
 Ver 3.0.1   
 
 <!-- In MarkDownd format. -->
@@ -11,7 +11,7 @@ This file provides helpful information for users new to Python to help run
 the ARISS Moderator Script Generator. You do not need to know Python to run 
 this tool! 
 
-The README file has information on how the tool works. This file has
+The **README** file has information on how the tool works. This file has
 information on how to setup Python and run the tool. This is were known 
 issues are documented and additional tips reside.
 
@@ -19,6 +19,7 @@ issues are documented and additional tips reside.
 Contents
 --------
 * Python
+  - Suggested File Structure
   - Installing the `docxtpl` Python Library
   - Run a Python Test Script
   - Running `ARISS_mod_script_gen.py`
@@ -49,12 +50,40 @@ The two sections below assume Python is already installed on your system.
 If you are a beginner or Python is not installed, skip the the next section
 and consider installing Thonny.
 
+### Suggested File Structure
+
+It is suggested to create a folder called `Python_Projects`. Within this 
+folder create the local Python virtual environment (`venv`). 
+
+Place the `ARISS_mod_script_gen-main` folder under `Python_Projects`. 
+Within the `ARISS_mod_script_gen-main` folder add **copies** of the `Working`
+folder each ARISS event. 
+
+For each ARISS event, run the Python script within the folder setup for 
+that event. The folder for each event will contain all the files needed 
+and created for that event. 
+
+	Example File Structure
+	----------------------
+	
+	Python_Projects
+	├── ARISS_mod_script_gen-main
+	│   ├── Examples
+	│   ├── Templates
+	│   ├── Working
+	│   ├── My_school_event_1
+	│   ├── My_school_event_2
+	|
+	└── venv
+
+<div style="page-break-after: always;"></div>
+
 ### Installing the `docxtpl` Python Library
 
 This tool requires the `docxtlp` Python library that is not normally 
 included with a Python installation. It must be added. How it gets added 
 depended on your setup. The latest version of the library can be found at 
-`https://pypi.org/project/docxtpl/`. 
+https://pypi.org/project/docxtpl/. 
 
 In general it can be installed using the command line command: 
 
@@ -65,8 +94,6 @@ in that folder with the virtual environment active.
 
 Alternatively, use Thonny and its tool to install library packages. This 
 is detailed below.
-
-<div style="page-break-after: always;"></div>
 
 ### Run a Python Test Script
 
@@ -98,6 +125,8 @@ The current date and time is 2025-02-16 11:18:55.113509
 Success! Congratulations, you just ran a Python script.
 ```
 	
+<div style="page-break-after: always;"></div>
+
 ### Running `ARISS_mod_script_gen.py`
 
 To run the tool, open a terminal and at the command line enter:
@@ -112,9 +141,6 @@ section. You can scroll up to see what you may has missed. If it ends with
 There should now be more or updated files in the `ARISS_mod_script_gen` 
 folder. The files of interest are the script and outline files.
 
-<div style="page-break-after: always;"></div>
-
-Example output messages from a successful run of the script.
 ```
 Python script: ARISS_mod_script_gen.py
            V.: 3.0.1
@@ -159,8 +185,8 @@ It is free and runs on Linux (and Raspberry Pi's), Macs, and Windows. It
 also bring along its own Python installation. Installing Thonny gets you 
 a good tool and Python in one step. This is recommended for Python 
 beginners. The software may be in your machine's software repository (or
-store). Or the files for your OS can be found at `https://thonny.org/`. 
-The wiki for Thonny can be found at `https://github.com/thonny/thonny/wiki`.
+store). Or the files for your OS can be found at https://thonny.org/. 
+The wiki for Thonny can be found at https://github.com/thonny/thonny/wiki.
 
 For Windows and the Mac it is best to install for current user only, not
 all users. This should not require admin privileges. 
@@ -176,7 +202,7 @@ files.
 A good guide for installing Thonny on Mac is at the link below. It also 
 has some instructions for adding libraries. 
 
-`https://www2.seas.gwu.edu/~cs4all/1012/editor-install/thonny-mac.html`
+https://www2.seas.gwu.edu/~cs4all/1012/editor-install/thonny-mac.html
 
 ### Thonny Virtual Environment Setup
 
@@ -231,9 +257,7 @@ results. Click on `Install`. Click `Close` when done.
 
 ### Setup `ARISS_mod_script_gen.py` in Thonny
 
-Download the Zipped package from GitHub at:
-
-	https://github.com/twk6809/ARISS_mod_script_gen 
+Download the Zipped package from GitHub at: https://github.com/twk6809/ARISS_mod_script_gen 
  
 Unzip the GitHub file `ARISS_mod_script_gen-main.zip`. Find the the 
 `ARISS_mod_script_get-main` folder and copy to the `Python_projects` folder.

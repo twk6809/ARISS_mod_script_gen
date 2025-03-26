@@ -3,23 +3,23 @@ ARISS Moderator Script Outline
 ==============================
 
 School / group: Madison High School
-ISS contact on: 2024-11-30
+ISS contact on: 2025-03-26
 Script version: 1
 
 Note: All times are local school time (24hr).
       Event durations and times to ISS Rise and are in minutes (m).
 
-Conference start at: 2024-11-30 02:00
+Conference start at: 2025-03-26 03:00
 ISS rise time (AOS): 04:00
 Tele-bridge station: K6DUE, Greenbelt. MD, USA
 
 Time   Dur  Rise  Event Block Description
 -----  ---  ----  -------------------------------------------------
-02:00   3m   120m  Start conference
-02:03   2m   117m  Moderator ground station checklist
-02:05   5m   115m  Contact preparation checklist
-02:10  10m   110m  Run through with all students & ground station
-02:20  81m   100m  School/group program.(Optional)
+03:00   3m   60m  Start conference
+03:03   2m   57m  Moderator ground station checklist
+03:05   5m   55m  Contact preparation checklist
+03:10  10m   50m  Run through with all students & ground station
+03:20  21m   40m  School/group program.(Optional)
 03:41   1m   19m  Start ARISS program
 03:42   4m   18m  ARISS introduction
 03:46   6m   14m  Optional video from student perspective - Yes
@@ -36,13 +36,13 @@ but are not removed from the calculation report.
 
 Based on conference call start time, ISS rise time, and ARISS 
 durations (prep & program), the school/group program time, or slack
-time, is estimated to be no more than 81 minutes starting at 02:20.
+time, is estimated to be no more than 21 minutes starting at 03:20.
 
 Contact preparation     ~20m
-School/group program    ~81m
+School/group program    ~21m
 ARISS program/contact   ~32m
 ============================
-Total event duration    ~133m
+Total event duration    ~73m
 
-Made Using Python ARISS Moderator Script Generator Version 3.0.0.
+Made Using Python ARISS Moderator Script Generator Version 3.0.1.
 
