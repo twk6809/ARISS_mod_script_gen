@@ -1,23 +1,8 @@
 # ARISS Moderator Script Generator Form
 # =====================================
 #   By: Ken McCaughey (N3FZX)
-#   On: 2024-11-30
-#   Ver 3.0.0
-#
-# This form is used to generate an ARISS moderator script.
-# The Python script ARISS_mod_script_gen.py will read this
-# form and combine with a script template to create a
-# complete moderator script in a properly formatted MS-WORD
-# document and a timeline report.
-#
-# The script timeline is calculated based on estimated durations
-# of the event blocks.
-#
-# ARISS Moderator Script Generator Form
-# =====================================
-#   By: Ken McCaughey (N3FZX)
-#   On: 2024-11-30
-#   Ver 3.0.0
+#   On: 2025-02-16
+#   Ver 3.0.1
 #
 # This form is used to generate an ARISS moderator script.
 # The Python script ARISS_mod_script_gen.py will read this
