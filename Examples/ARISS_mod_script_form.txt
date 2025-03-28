@@ -1,23 +1,8 @@
 # ARISS Moderator Script Generator Form
 # =====================================
 #   By: Ken McCaughey (N3FZX)
-#   On: 2024-11-30
-#   Ver 3.0.0
-#
-# This form is used to generate an ARISS moderator script.
-# The Python script ARISS_mod_script_gen.py will read this
-# form and combine with a script template to create a
-# complete moderator script in a properly formatted MS-WORD
-# document and a timeline report.
-#
-# The script timeline is calculated based on estimated durations
-# of the event blocks.
-#
-# ARISS Moderator Script Generator Form
-# =====================================
-#   By: Ken McCaughey (N3FZX)
-#   On: 2024-11-30
-#   Ver 3.0.0
+#   On: 2025-02-16
+#   Ver 3.0.1
 #
 # This form is used to generate an ARISS moderator script.
 # The Python script ARISS_mod_script_gen.py will read this
@@ -72,14 +57,14 @@ Short name: Example
 # Important Dates and Times
 # =========================
 # Only enter numbers in the specified formats.
-Date of contact (YYYY-MM-DD): 2025-03-26
+Date of contact (YYYY-MM-DD): 2024-11-30
 
 # Conference typically starts 1 hour before ISS Rise & AOS.
 Start of conference in UTC time (HH:mm): 01:00
-Start of conference school time (HH:mm): 03:00
+Start of conference school time (HH:mm): 02:00
 
 # Round down ISS rise time to the nearest minute.
-ISS rise in UTC time (HH:mm): 02:00
+ISS rise in UTC time (HH:mm): 03:00
 ISS rise school time (HH:mm): 04:00
 
 # ========================
