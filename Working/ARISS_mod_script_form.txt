@@ -57,14 +57,14 @@ Short name: Example
 # Important Dates and Times
 # =========================
 # Only enter numbers in the specified formats.
-Date of contact (YYYY-MM-DD): 2024-11-30
+Date of contact (YYYY-MM-DD): 2025-04-09
 
 # Conference typically starts 1 hour before ISS Rise & AOS.
 Start of conference in UTC time (HH:mm): 01:00
-Start of conference school time (HH:mm): 02:00
+Start of conference school time (HH:mm): 03:00
 
 # Round down ISS rise time to the nearest minute.
-ISS rise in UTC time (HH:mm): 03:00
+ISS rise in UTC time (HH:mm): 02:00
 ISS rise school time (HH:mm): 04:00
 
 # ========================
