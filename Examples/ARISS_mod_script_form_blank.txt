@@ -48,68 +48,68 @@
 # Script version
 # ==============
 # Update this each time just before a new WORD doc is generated.
-Script version: 1
+Script version: {{version}}
 
 # Short one word nickname to be added to the output filenames.
-Short name: Example
+Short name: test
 
 # =========================
 # Important Dates and Times
 # =========================
 # Only enter numbers in the specified formats.
-Date of contact (YYYY-MM-DD): 2025-04-09
+Date of contact (YYYY-MM-DD): 2025-02-16
 
 # Conference typically starts 1 hour before ISS Rise & AOS.
 Start of conference in UTC time (HH:mm): 01:00
-Start of conference school time (HH:mm): 03:00
+Start of conference school time (HH:mm): 02:00
 
 # Round down ISS rise time to the nearest minute.
-ISS rise in UTC time (HH:mm): 02:00
+ISS rise in UTC time (HH:mm): 03:00
 ISS rise school time (HH:mm): 04:00
 
 # ========================
 # School/Group Information
 # ========================
-School/group name: Madison High School
-School/group location: Springfield, USA
-Coordinator/teacher at venue: Walter Denton
-School principal name: Osgood Conklin
-School teacher name: Miss Brooks
+School/group name: {{school_group_name}}
+School/group location: {{school_group_city_state}}
+Coordinator/teacher at venue: {{school_coordinator_name}}
+School principal name: {{principal_name}}
+School teacher name: {{teacher_name}}
 
 # ===============
 # ISS Information
 # ===============
-Astronaut name: Major Tom
-Astronaut callsign: KM5TOM
-ISS callsign to be used: NA1SS
+Astronaut name: {{astronaut_name}}
+Astronaut callsign: {{astronaut_callsign}}
+ISS callsign to be used: {{ISS_callsign}}
 
 # ===========================
 # ARISS Moderator Information
 # ===========================
-Moderator name: Margaret Davis
-Moderator callsign: KM1DAV
-Moderator will be On-site/Remote for the contact: On-site
+Moderator name: {{moderator_name}}
+Moderator callsign: {{moderator_callsign}}
+Moderator will be On-site/Remote for the contact: {{moderator_location}}
 
 # ========================
 # ARISS Mentor Information
 # ========================
-Mentor name: Philip Boynton
-Mentor callsign: KP2BOY
-Mentor will be On-site/Remote for the contact: Remote
+Mentor name: {{mentor_name}}
+Mentor callsign: {{mentor_callsign}}
+Mentor will be On-site/Remote for the contact: {{mentor_location}}
 
 # ================================
 # ARISS Tele-bridge Ground Station
 # ================================
-Tele-bridge station callsign: K6DUE
-Tele-bridge station location: Greenbelt. MD, USA
-Tele-bridge operator name: Harriet Conklin
-Tele-bridge operator callsign: KH3CON
+Tele-bridge station callsign: {{telebridge_callsign}}
+Tele-bridge station location: {{telebridge_location}}
+Tele-bridge operator name: {{operator_name}}
+Tele-bridge operator callsign: {{operator_callsign}}
 
 # Tele-bridge audio interface options: Verizon, Zoom Dial-in, Zoom Video, etc.
-Tele-bridge audio interface: Verizon
+Tele-bridge audio interface: {{audio_interface}}
 
 # Tele-bridge video interface options: None, Zoom, Google Meet, etc.
-Tele-bridge video interface: Zoom
+Tele-bridge video interface: {{telebridge_video}}
 
 # =====================
 # ARISS Optional Videos
@@ -121,9 +121,9 @@ Contact from the ISS perspective (Yes/No): Yes
 # ==============
 # Live Streaming
 #===============
-Live stream planned (Yes/No): Yes
-Live stream operator name: Fabian "Stretch" Snodgrass
-Live stream operator callsign: No Call
+Live stream planned (Yes/No): {{livestream_plan}}
+Live stream operator name: {{livestream_name}}
+Live stream operator callsign: {{livestream_callsign}}
 
 
 # ====================

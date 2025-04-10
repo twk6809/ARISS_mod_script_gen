@@ -3,13 +3,13 @@ ARISS Moderator Script Outline
 ==============================
 
 School / group: Madison High School
-ISS contact on: 2025-03-26
+ISS contact on: 2025-04-09
 Script version: 1
 
 Note: All times are local school time (24hr).
       Event durations and times to ISS Rise and are in minutes (m).
 
-Conference start at: 2025-03-26 03:00
+Conference start at: 2025-04-09 03:00
 ISS rise time (AOS): 04:00
 Tele-bridge station: K6DUE, Greenbelt. MD, USA
 
