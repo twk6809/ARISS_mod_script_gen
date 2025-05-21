@@ -1,8 +1,8 @@
 ARISS Moderator Script Generator - READ ME
 ==========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-03-26   
-Ver 3.0.1   
+On: 2025-05-20   
+Ver 3.1.0   
 
 <!-- In MarkDownd format. -->
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
@@ -143,6 +143,18 @@ Instructions and Work Flow
    - **COPY** the `Working` folder to a new folder named for the ARISS event
      or school name. 
      
+```    
+	Python_Projects
+	├── ARISS_mod_script_gen-main
+	│   ├── Examples
+	│   ├── Templates
+	│   ├── Working
+	│   ├── My_school_event_1
+	│   ├── My_school_event_2
+	|
+	└── venv
+```
+     
    - **CHECK** for these two files are in the working folder:
         * `ARISS_mod_script_gen.py`
         * `ARISS_mod_script_form_blank.txt`
@@ -234,9 +246,9 @@ Instructions and Work Flow
      
   	 ```
 	 Python script: ARISS_mod_script_gen.py
- 	           V.: 3.0.1
+ 	           V.: 3.1.0
   	          By: Ken McCaughey, N3FZX
-  	          On: 2025-02-16
+  	          On: 2025-05-20
 
 	 This tool creates an ARISS Moderator Script.
 	 It reads data from a form text file and a MS-Word docx template file.
@@ -394,6 +406,7 @@ School/group location: `{{school_group_city_state}}`  *
 Coordinator/teacher at venue: `{{school_coordinator_name}}`  *   
 School principal name: `{{principal_name}}`  *  
 School teacher name: `{{teacher_name}}`  *  
+School/group presenter name: `{{presenter_name}}` *
 Venue phone number: `{{school_coordinator_phone}}`  
 Emergency back-up phone number: `{{school_coordinator_backup_phone}}` 
 
@@ -429,7 +442,7 @@ Tele-bridge video interface: `{{telebridge_video}}`  *
 
 #### ARISS Optional Videos
 Contact from student perspective (Yes/No): `{{student_video}}`  *  
-Contact from ISS perspective (Yes/No): `{{ISS_video}}`  *  
+Contact from the ISS perspective (Yes/No): `{{ISS_video}}`  *  
 
 #### Live Streaming
 Live steam planned (Yes/No): `{{livestream_plan}}`  *  
@@ -439,6 +452,7 @@ Live stream operator phone number: `{{livestream_phone}}`
 
 #### Fixed Timing
 Contact date: `{{contact_date}}`  *  
+Event time zone: `{{etz}}` *
 Start of conference in UTC: `{{conf_utc}}`  *  
 Start of conference school time: `{{conf_sch}}`  *  
 ISS rise time in UTC: `{{AOS_UTC}}`  *  

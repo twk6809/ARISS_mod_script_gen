@@ -2,11 +2,11 @@
 """
 | NAME: ARISS Moderator Script Generator
 | BY: Ken McCaughey (N3FZX)
-| ON: 2025-02-12
+| ON: 2025-05-20
 | PROJECT: ARISS
 | SCRIPT: ARISS_mod_script_gen.py
-| VERSION: 3.0.1
-| STATUS: Final version.
+| VERSION: 3.1.0
+| STATUS: Released.
 | SPDX-FileCopyrightText: 2025 Ken McCaughey
 | SPDX-License-Identifier: Creative Commons Attribution-ShareAlike 4.0
 
@@ -71,8 +71,8 @@ from datetime import timedelta
 import sys
 
 # Version info
-version_date = '2025-02-16'
-version = '3.0.1'
+version_date = '2025-05-20'
+version = '3.1.0'
 
 # === USER CONFIGURATION ===
 # Display outline report on commandline?
@@ -111,6 +111,7 @@ a_dictionary = {
     'Short name': 'test',
     # Important Dates and Times
     'Date of contact (YYYY-MM-DD)': version_date,
+    'Event time zone': '{{etz}}',
     'Start of conference in UTC time (HH:mm)': '01:00',
     'Start of conference school time (HH:mm)': '02:00',
     'ISS rise in UTC time (HH:mm)': '03:00',
@@ -118,11 +119,12 @@ a_dictionary = {
     # School/Group Information
     'School/group name': '{{school_group_name}}',
     'School/group location': '{{school_group_city_state}}',
-    'Coordinator/teacher at venue': '{{school_coordinator_name}}',
-    'Venue phone number': '{{school_coordinator_phone}}',
+    'Coordinator/teacher at event': '{{school_coordinator_name}}',
+    'event phone number': '{{school_coordinator_phone}}',
     'Emergency back-up phone number': '{{school_coordinator_backup_phone}}',
     'School principal name': '{{principal_name}}',
     'School teacher name': '{{teacher_name}}',
+    'School/group presenter name': '{{presenter_name}}',
     # ISS Information
     'Astronaut name': '{{astronaut_name}}',
     'Astronaut callsign': '{{astronaut_callsign}}',
@@ -253,9 +255,14 @@ def time_calcs():
 
     # Check to see if either of the two optional videos are to be included.
     # If not, zero out the respective durations.
-    if a_dictionary['Contact from student perspective (Yes/No)'] == 'No':
+    a_dictionary['Contact from student perspective (Yes/No)'] = \
+                          a_dictionary['Contact from student perspective (Yes/No)'].upper()
+    a_dictionary['Contact from the ISS perspective (Yes/No)'] = \
+                          a_dictionary['Contact from the ISS perspective (Yes/No)'].upper()
+
+    if a_dictionary['Contact from student perspective (Yes/No)'] == 'NO':
         d08 = 0
-    if a_dictionary['Contact from the ISS perspective (Yes/No)'] == 'No':
+    if a_dictionary['Contact from the ISS perspective (Yes/No)'] == 'NO':
         d09 = 0
 
     # In-elegant cumulative time durations from AOS needed for calculating times from AOS to start of ARISS program.
@@ -357,33 +364,49 @@ def make_outline_report_file(d):
                    'ISS contact on: ' + a_dictionary['Date of contact (YYYY-MM-DD)'],
                    'Script version: ' + a_dictionary['Script version'],
                    '',
-                   'Note: All times are local school time (24hr).',
-                   '      Event durations and times to ISS Rise and are in minutes (m).',
-                   '',
-                   'Conference start at: ' + Conf_start_time,
-                   'ISS rise time (AOS): ' + AOS_time,
+                   'Event time zone abv: ' + a_dictionary['Event time zone'],
+                   'Conference start at: ' + Conf_start_time + ' '
+                                           + a_dictionary['Event time zone']
+                                           + ' (' + a_dictionary['Start of conference in UTC time (HH:mm)'] + ' UTC)',
+                   'ISS rise time (AOS): ' + a_dictionary['Date of contact (YYYY-MM-DD)']
+                                           + ' ' + AOS_time + ' ' + a_dictionary['Event time zone']
+                                           + ' (' + a_dictionary['ISS rise in UTC time (HH:mm)'] + ' UTC)',
                    'Tele-bridge station: ' + a_dictionary['Tele-bridge station callsign'] + ', '
                    + a_dictionary['Tele-bridge station location'],
                    '',
+                   'Note: All times are local school/group time (24hr).',
+                   '      Event durations and times to ISS Rise and are in minutes (m).',
+                   '',
+                   'Contact preparation   ~' + str(int(D01) + int(D02) + int(D03) + int(D04)) + 'm',
+                   'School/group program  ~' + str(int(D05)) + 'm',
+                   'ARISS program/contact ~' + str(int(D06) + int(D07) + int(D08) + int(D09) + int(D10) + int(D11) +
+                                                     int(pass_len) + int(D13)) + 'm',
+                   '===========================',
+                   'Total event duration  ~' + str(int(D01) + int(D02) + int(D03) + int(D04) + int(D05) + int(D06) +
+                                                     int(D07) + int(D08) + int(D09) + int(D10) + int(D11) +
+                                                     int(pass_len) + int(D13)) + 'm',
+                    '',
                    'Time   Dur  Rise  Event Block Description',
-                   '-----  ---  ----  -------------------------------------------------',
-                   T01 + '  ' + space(D01) + 'm   ' + space(R01) + 'm  Start conference',
-                   T02 + '  ' + space(D02) + 'm   ' + space(R02) + 'm  Moderator ground station checklist',
-                   T03 + '  ' + space(D03) + 'm   ' + space(R03) + 'm  Contact preparation checklist',
-                   T04 + '  ' + space(D04) + 'm   ' + space(R04) + 'm  Run through with all students & ground station',
-                   T05 + '  ' + space(D05) + 'm   ' + space(R05) + 'm  School/group program.(Optional)',
-                   T06 + '  ' + space(D06) + 'm   ' + space(R06) + 'm  Start ARISS program',
-                   T07 + '  ' + space(D07) + 'm   ' + space(R07) + 'm  ARISS introduction',
-                   T08 + '  ' + space(D08) + 'm   ' + space(R08) + 'm  Optional video from student perspective - '
+                   '-----  ---  ----  ---------------------------------------------------',
+                   T01 + ' ' + space(D01) + 'm  ' + space(R01) + 'm  #1 - Start conference **',
+                   T02 + ' ' + space(D02) + 'm  ' + space(R02) + 'm  #2 - Moderator ground station checklist',
+                   T03 + ' ' + space(D03) + 'm  ' + space(R03) + 'm  #3 - Contact preparation checklist',
+                   T04 + ' ' + space(D04) + 'm  ' + space(R04) + 'm  #4 - Run through with all students & ground station',
+                   T05 + ' ' + space(D05) + 'm  ' + space(R05) + 'm  #5 - School/group program. (Optional) **',
+                   T06 + ' ' + space(D06) + 'm  ' + space(R06) + 'm  #6 - Start ARISS program **',
+                   T07 + ' ' + space(D07) + 'm  ' + space(R07) + 'm  #7 - ARISS introduction',
+                   T08 + ' ' + space(D08) + 'm  ' + space(R08) + 'm  #8 - Optional video from student perspective - '
                    + a_dictionary['Contact from student perspective (Yes/No)'],
-                   T09 + '  ' + space(D09) + 'm   ' + space(R09) + 'm  Optional video from the ISS perspective - '
+                   T09 + ' ' + space(D09) + 'm  ' + space(R09) + 'm  #9 - Optional video from the ISS perspective - '
                    + a_dictionary['Contact from the ISS perspective (Yes/No)'],
-                   T10 + '  ' + space(D10) + 'm   ' + space(R10) + 'm  Introduce the ground station',
-                   T11 + '  ' + space(D11) + 'm   ' + space(R11) + 'm  Handover to ground station',
-                   T12 + '  ' + space(D12) + 'm   ' + space(R12) + 'm  ISS rise and Acquisition of Signal (AOS)',
-                   AOS_time + '  ' + space(pass_len) + 'm    0m  ISS contact!.',
+                   T10 + ' ' + space(D10) + 'm  ' + space(R10) + 'm  #10 - Introduce the ground station',
+                   T11 + ' ' + space(D11) + 'm  ' + space(R11) + 'm  #11 - Handover to ground station',
+                   T12 + ' ' + space(D12) + 'm  ' + space(R12) + 'm  #12 - ISS rise and Acquisition of Signal (AOS) **',
+                   AOS_time + ' ' + space(pass_len) + 'm    0m  ISS contact!',
                    LOS + '   -     -   ISS set and Loss of Signal (LOS)',
-                   T13 + '  ' + space(D13) + 'm    -   Closing remarks & end of ARISS program',
+                   T13 + ' ' + space(D13) + 'm    -   #13 - Closing remarks & end of ARISS program',
+                   '',
+                   '** = Critical milestone times.',
                    '',
                    'Any events with 0m duration have been eliminated from the program,',
                    'but are not removed from the calculation report.',
@@ -391,15 +414,6 @@ def make_outline_report_file(d):
                    'Based on conference call start time, ISS rise time, and ARISS ',
                    'durations (prep & program), the school/group program time, or slack',
                    'time, is estimated to be no more than ' + str(D05) + ' minutes starting at ' + str(T05) + '.',
-                   '',
-                   'Contact preparation     ~' + str(int(D01) + int(D02) + int(D03) + int(D04)) + 'm',
-                   'School/group program    ~' + str(int(D05)) + 'm',
-                   'ARISS program/contact   ~' + str(int(D06) + int(D07) + int(D08) + int(D09) + int(D10) + int(D11) +
-                                                     int(pass_len) + int(D13)) + 'm',
-                   '============================',
-                   'Total event duration    ~' + str(int(D01) + int(D02) + int(D03) + int(D04) + int(D05) + int(D06) +
-                                                     int(D07) + int(D08) + int(D09) + int(D10) + int(D11) +
-                                                     int(pass_len) + int(D13)) + 'm',
                    '',
                    'Made Using Python ARISS Moderator Script Generator Version ' + str(version) + '.',
                    ''
@@ -423,6 +437,8 @@ def space(number_int):
     number_int = int(number_int)
     # print(number_int)
     number_str = str(number_int)
+    if number_int < 100:
+        number_str = ' ' + number_str
     if number_int < 10:
         number_str = ' ' + number_str
     # print(number_str)
@@ -501,6 +517,7 @@ def build_output_dictionary():
         'version': a_dictionary['Script version'],
         # Dates and times from form file
         'contact_date': a_dictionary['Date of contact (YYYY-MM-DD)'],
+        'etz': a_dictionary['Event time zone'],
         'conf_UTC': a_dictionary['Start of conference in UTC time (HH:mm)'],
         'conf_sch': a_dictionary['Start of conference school time (HH:mm)'],
         'AOS_UTC': a_dictionary['ISS rise in UTC time (HH:mm)'],
@@ -508,11 +525,12 @@ def build_output_dictionary():
         # School info from form file
         'school_group_name': a_dictionary['School/group name'],
         'school_group_city_state': a_dictionary['School/group location'],
-        'school_coordinator_name': a_dictionary['Coordinator/teacher at venue'],
-        'school_coordinator_phone': a_dictionary['Venue phone number'],
+        'school_coordinator_name': a_dictionary['Coordinator/teacher at event'],
+        'school_coordinator_phone': a_dictionary['event phone number'],
         'school_coordinator_backup_phone': a_dictionary['Emergency back-up phone number'],
         'principal_name': a_dictionary['School principal name'],
         'teacher_name': a_dictionary['School teacher name'],
+        'presenter_name': a_dictionary['School/group presenter name'],
         # ISS info from form file
         'astronaut_name': a_dictionary['Astronaut name'],
         'astronaut_callsign': a_dictionary['Astronaut callsign'],
@@ -651,22 +669,26 @@ def make_blank_form_file():
         '# Only enter numbers in the specified formats.',
         'Date of contact (YYYY-MM-DD): ' + version_date,
         '',
-        '# Conference typically starts 1 hour before ISS Rise & AOS.',
-        'Start of conference in UTC time (HH:mm): 01:00',
-        'Start of conference school time (HH:mm): 02:00',
+        '# Event time zone abbreviation, i.e. EST or PDT.',
+        'Event time zone: {{etz}}',
         '',
         '# Round down ISS rise time to the nearest minute.',
         'ISS rise in UTC time (HH:mm): 03:00',
         'ISS rise school time (HH:mm): 04:00',
+        '',
+        '# Conference typically starts 1 hour before ISS Rise & AOS.',
+        'Start of conference in UTC time (HH:mm): 01:00',
+        'Start of conference school time (HH:mm): 02:00',
         '',
         '# ========================',
         '# School/Group Information',
         '# ========================',
         'School/group name: {{school_group_name}}',
         'School/group location: {{school_group_city_state}}',
-        'Coordinator/teacher at venue: {{school_coordinator_name}}',
+        'Coordinator/teacher at event: {{school_coordinator_name}}',
         'School principal name: {{principal_name}}',
         'School teacher name: {{teacher_name}}',
+        'School/group presenter name: {{presenter_name}}',
         '',
         '# ===============',
         '# ISS Information',
@@ -727,55 +749,55 @@ def make_blank_form_file():
         '#    All durations are integer minutes.',
         '#    ONLY change these if necessary.',
         '',
-        '# Event - Start conference.',
+        '# Event 1 - Start conference.',
         '# Default duration = 3 min',
         'D01: 3',
         '',
-        '# Event - Moderator ground station checklist.',
+        '# Event 2 - Moderator ground station checklist.',
         '# Default duration = 2 min',
         'D02: 2',
         '',
-        '# Event - Contact preparation checklist.',
+        '# Event 3 - Contact preparation checklist.',
         '# Default duration = 5 min',
         'D03: 5',
         '',
-        '# Event - Run through with all students and ground station.',
+        '# Event 4 - Run through with all students and ground station.',
         '# Default duration = 10 min',
         'D04: 10',
         '',
-        '# Event - Start school/group program or slack time.',
+        '# Event 5 - Start school/group program or slack time.',
         '# Nothing to change here.',
         '# The script calculates D05 time as a remainder of time left.',
         '',
-        '# Event - Start ARISS program.',
+        '# Event 6 - Start ARISS program.',
         '# Default duration = 1 min',
         'D06: 1',
         '',
-        '# Event - ARISS introduction.',
+        '# Event 7 - ARISS introduction.',
         '# Default duration = 4 min',
         'D07: 4',
         '',
-        '# OPTIONAL Event - Video of ARISS contact from student perspective.',
+        '# OPTIONAL Event 8 - Video of ARISS contact from student perspective.',
         '# Default duration = 6 min',
         'D08: 6',
         '',
-        '# OPTIONAL Event- Video of ARISS contact from ISS perspective.',
+        '# OPTIONAL Event 9 - Video of ARISS contact from ISS perspective.',
         '# Default duration = 3 min',
         'D09: 3',
         '',
-        '# Event - Introduce the ground station.',
+        '# Event 10 - Introduce the ground station.',
         '# Default duration = 3 min',
         'D10: 3',
         '',
-        '# Event - Handover to ground station.',
+        '# Event 11 - Handover to ground station.',
         '# Default duration = 1 min',
         'D11: 1',
         '',
-        '# Event - ISS contact!',
+        '# Event 12 - ISS contact!',
         '# Default duration = 1 min',
         'D12: 1',
         '',
-        '# Event - Closing remarks & end of ARISS program.',
+        '# Event 13 - Closing remarks & end of ARISS program.',
         '# Default duration = 3 min',
         'D13: 3',
         '',

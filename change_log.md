@@ -4,8 +4,28 @@ ARISS Moderator Script Generator - Change Log
 This record only covers official releases and not any interim development
 versions.  
 
-V3.0.1- 2025-02-16
-------------------
+V3.1.0 - 2025-05-20
+-------------------
+- Added new variable to the form file: `Event time zone: {{etz}}`. It is 
+  simply designed to capture and report the time zone abbreviation for
+  informational purposes. No calculations are based on this value. 
+- Added new variable to the form file: `School/group presenter name:`
+  `{{presenter_name}}`. Since the school/group presenter could be the 
+  principal, teacher, or someone else, it was easier to just separate 
+  out that role. This will be carried over to the templates I provide.
+- In the form file added annotation for the event timing. Each event
+  block has a number. This will be carried over to the templates I 
+  provide.
+- Cleaned up the outline report. Added the event time zone. Added event
+  block numbers. Fixed some number alignments to allow for duration or 
+  minutes until times that might use three digits.
+- Fixed a bug in the form file for the optional videos. The Yes/No 
+  answer was case sensitive. Now case no longer matters. If anything 
+  other than No (or no, or NO, or nO) is entered it defaults to Yes.
+- Updated the README and HELPER files to reflect the variable changes.
+
+V3.0.1 - 2025-02-16
+-------------------
 - Improved error handling. Especially for common errors in the form file.
   Provides more useful feedback on what to look for to fix the form file.
 - Updated the instructions in the form file.

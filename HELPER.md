@@ -1,8 +1,8 @@
 ARISS Moderator Script Generator - Helper
 =========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-03-26   
-Ver 3.0.1   
+On: 2025-05-20   
+Ver 3.1.0   
 
 <!-- In MarkDownd format. -->
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
@@ -143,9 +143,9 @@ folder. The files of interest are the script and outline files.
 
 ```
 Python script: ARISS_mod_script_gen.py
-           V.: 3.0.1
+           V.: 3.1.0
            By: Ken McCaughey, N3FZX
-           On: 2025-02-16
+           On: 2025-05-20
 
 This tool creates an ARISS Moderator Script.
 It reads data from a form text file and a MS-Word docx template file.
@@ -290,7 +290,8 @@ click on `Run current script...`.
 
 It runs fast and is not interactive. A number of lines of messages will 
 stream down the `Shell` sub-window. It will resemble the example below.
-You can scroll up to see what you may has missed. If it ends with `Success!` then you are all set.
+You can scroll up to see what you may has missed. If it ends with `Success!` 
+then you are all set.
 
 There should now be more or updated files in the `ARISS_mod_script_gen` 
 folder. The files of interest are the script and outline files.

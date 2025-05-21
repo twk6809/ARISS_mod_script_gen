@@ -1,8 +1,8 @@
-# ARISS Moderator Script Generator Form
+# ARISS Moderator Script Generator Form - EXAMPLE
 # =====================================
 #   By: Ken McCaughey (N3FZX)
-#   On: 2025-02-16
-#   Ver 3.0.1
+#   On: 2025-05-20
+#   Ver 3.1.0
 #
 # This form is used to generate an ARISS moderator script.
 # The Python script ARISS_mod_script_gen.py will read this
@@ -57,24 +57,28 @@ Short name: Example
 # Important Dates and Times
 # =========================
 # Only enter numbers in the specified formats.
-Date of contact (YYYY-MM-DD): 2025-04-09
+Date of contact (YYYY-MM-DD): 2025-05-20
 
-# Conference typically starts 1 hour before ISS Rise & AOS.
-Start of conference in UTC time (HH:mm): 01:00
-Start of conference school time (HH:mm): 03:00
+# Event time zone abbreviation, i.e. EST or PDT.
+Event time zone: EST
 
 # Round down ISS rise time to the nearest minute.
 ISS rise in UTC time (HH:mm): 02:00
 ISS rise school time (HH:mm): 04:00
+
+# Conference typically starts 1 hour before ISS Rise & AOS.
+Start of conference in UTC time (HH:mm): 01:00
+Start of conference school time (HH:mm): 03:00
 
 # ========================
 # School/Group Information
 # ========================
 School/group name: Madison High School
 School/group location: Springfield, USA
-Coordinator/teacher at venue: Walter Denton
+Coordinator/teacher at event: Walter Denton
 School principal name: Osgood Conklin
 School teacher name: Miss Brooks
+School/group presenter name: Miss Brooks
 
 # ===============
 # ISS Information
@@ -101,7 +105,7 @@ Mentor will be On-site/Remote for the contact: Remote
 # ARISS Tele-bridge Ground Station
 # ================================
 Tele-bridge station callsign: K6DUE
-Tele-bridge station location: Greenbelt. MD, USA
+Tele-bridge station location: Greenbelt, MD, USA
 Tele-bridge operator name: Harriet Conklin
 Tele-bridge operator callsign: KH3CON
 
@@ -135,55 +139,55 @@ Live stream operator callsign: No Call
 #    All durations are integer minutes.
 #    ONLY change these if necessary.
 
-# Event - Start conference.
+# Event 1 - Start conference.
 # Default duration = 3 min
 D01: 3
 
-# Event - Moderator ground station checklist.
+# Event 2 - Moderator ground station checklist.
 # Default duration = 2 min
 D02: 2
 
-# Event - Contact preparation checklist.
+# Event 3 - Contact preparation checklist.
 # Default duration = 5 min
 D03: 5
 
-# Event - Run through with all students and ground station.
+# Event 4 - Run through with all students and ground station.
 # Default duration = 10 min
 D04: 10
 
-# Event - Start school/group program or slack time.
+# Event 5 - Start school/group program or slack time.
 # Nothing to change here.
 # The script calculates D05 time as a remainder of time left.
 
-# Event - Start ARISS program.
+# Event 6 - Start ARISS program.
 # Default duration = 1 min
 D06: 1
 
-# Event - ARISS introduction.
+# Event 7 - ARISS introduction.
 # Default duration = 4 min
 D07: 4
 
-# OPTIONAL Event - Video of ARISS contact from student perspective.
+# OPTIONAL Event 8 - Video of ARISS contact from student perspective.
 # Default duration = 6 min
 D08: 6
 
-# OPTIONAL Event- Video of ARISS contact from ISS perspective.
+# OPTIONAL Event 9 - Video of ARISS contact from ISS perspective.
 # Default duration = 3 min
 D09: 3
 
-# Event - Introduce the ground station.
+# Event 10 - Introduce the ground station.
 # Default duration = 3 min
 D10: 3
 
-# Event - Handover to ground station.
+# Event 11 - Handover to ground station.
 # Default duration = 1 min
 D11: 1
 
-# Event - ISS contact!
+# Event 12 - ISS contact!
 # Default duration = 1 min
 D12: 1
 
-# Event - Closing remarks & end of ARISS program.
+# Event 13 - Closing remarks & end of ARISS program.
 # Default duration = 3 min
 D13: 3
 
