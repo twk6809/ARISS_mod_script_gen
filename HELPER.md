@@ -1,10 +1,10 @@
 ARISS Moderator Script Generator - Helper
 =========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-05-20   
+On: 2025-06-14   
 Ver 3.1.0   
 
-<!-- In MarkDownd format. -->
+<!-- In MarkDown format. -->
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
 
 This file provides helpful information for users new to Python to help run 
@@ -50,6 +50,14 @@ The two sections below assume Python is already installed on your system.
 If you are a beginner or Python is not installed, skip the the next section
 and consider installing Thonny.
 
+### Python Command Line
+
+This tool requires Python version 3.x. For Linux and Mac `python3` is 
+usually used at the command line. Depending on how the system is setup,
+`python` can be used. Be aware that `python` often refers to Python 2. 
+For Windows, users can use `python` or `py` at the command line. This 
+document references `python3`, but substitute what your system is setup for.
+
 ### Suggested File Structure
 
 It is suggested to create a folder called `Python_Projects`. Within this 
@@ -61,20 +69,17 @@ folder each ARISS event.
 
 For each ARISS event, run the Python script within the folder setup for 
 that event. The folder for each event will contain all the files needed 
-and created for that event. 
+and created for that event. See example file structure below.
 
-	Example File Structure
-	----------------------
-	
 	Python_Projects
 	├── ARISS_mod_script_gen-main
 	│   ├── Examples
-	│   ├── Templates
-	│   ├── Working
-	│   ├── My_school_event_1
-	│   ├── My_school_event_2
+	│   ├── Templates           <-- Make copies of templates as needed
+	│   ├── Working             <-- Make copies of this folder
+	│   ├── My_school_event_1   <-- Copy of "Working" folder
+	│   ├── My_school_event_2   <-- Another copy of Working folder
 	|
-	└── venv
+	└── venv                    <-- Python virtual environment
 
 <div style="page-break-after: always;"></div>
 
@@ -87,7 +92,7 @@ https://pypi.org/project/docxtpl/.
 
 In general it can be installed using the command line command: 
 
-	`pip install docxtpl` or `python3 -m pip install docxtpl`. 
+`pip install docxtpl` or `python3 -m pip install docxtpl` or `py -m pip install docxtpl`
 	
 If you are using a virtual environment (i.e. `venv`), execute the command 
 in that folder with the virtual environment active.  
@@ -105,7 +110,7 @@ you are the folder with the test script. Use a change directory command
 file listing command (i.e. `ls` or `dir`). Run the script with the following
 command:
 
-	`python3 ARISS_Python_Test.py`
+	python3 ARISS_Python_Test.py
 	
 Output should reassemble...
 
@@ -131,7 +136,7 @@ Success! Congratulations, you just ran a Python script.
 
 To run the tool, open a terminal and at the command line enter:
 
-	`python3 ARISS_mod_script_gen.py`
+	python3 ARISS_mod_script_gen.py
 	
 It runs fast and is not interactive. A number of lines of messages will 
 stream down the window. It will resemble the example below in the Thonny
