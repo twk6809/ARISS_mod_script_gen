@@ -1,7 +1,7 @@
 ARISS Moderator Script Generator - Template Catalog
 ===================================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-05-20   
+On: 2025-07-15   
 Ver 3.1.0   
 
 
@@ -25,21 +25,21 @@ If you need/want a different template, contact this author.
 TEMPLATES
 ---------
 
-ARISS_mod_script_temp_master_long.docx - Ver. 2025-05-20, by N3FZX
+ARISS_mod_script_temp_master_long.docx - Ver. 2025-07-15, by N3FZX
 
 	This is based on the universal template and includes both of the 
 	optional videos. This template is streamlined with some redline 
 	notes removed for the video events. If using this template, be 
 	sure the form file indicates "Yes" for both videos.
 
-ARISS_mod_script_temp_master_short.docx - Ver. 2025-05-20, by N3FZX
+ARISS_mod_script_temp_master_short.docx - Ver. 2025-07-15, by N3FZX
 
 	This is based on the universal template without either of the 
 	optional videos. This matches a traditional ARISS contact script.
 	The timeline outline reflects the lack of videos. If using this 
 	template, be sure the form file indicates "No" for both videos.
 
-ARISS_mod_script_temp_master_universal.docx - Ver. 2025-05-20, by N3FZX
+ARISS_mod_script_temp_master_universal.docx - Ver. 2025-07-15, by N3FZX
 
 	All the templates included here are derived from this one. This 
 	includes both optional videos. The video events have some redline
