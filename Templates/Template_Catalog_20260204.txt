@@ -35,7 +35,8 @@ If you need/want a different template, contact this author.
 
 +--------------+--------------+----------------------------+------------+  
 |    Video 1   |    Video 2   | Script Template            | Event #8/9 |  
-|     ARRL     | Nicole Ayres | ARISS_mod_script_temp_...  | Editing?   |   +==============+==============+============================+============+  
+|     ARRL     | Nicole Ayres | ARISS_mod_script_temp_...  | Editing?   |   
++==============+==============+============================+============+  
 |     Yes      |     Yes      | ...master_universal.doc    |    Yes     |  
 |     Yes      |     Yes      | ...master_translation.docx |    Yes     |  
 |     Yes      |     Yes      | ...master_long.docx        |    No      |  
