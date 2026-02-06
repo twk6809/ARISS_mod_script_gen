@@ -1,11 +1,11 @@
 | NAME: ARISS Moderator Script Generator
 | BY: Ken McCaughey (N3FZX)
-| ON: 2025-05-20
+| ON: 2026-02-02
 | PROJECT: ARISS
 | SCRIPT: ARISS_mod_script_gen.py
-| VERSION: 3.1.0
+| VERSION: 3.1.2
 | STATUS: Final version.
-| SPDX-FileCopyrightText: 2025 Ken McCaughey
+| SPDX-FileCopyrightText: 2026 Ken McCaughey
 | SPDX-License-Identifier: Creative Commons Attribution-ShareAlike 4.0
 
 PURPOSE:

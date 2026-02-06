@@ -1,0 +1,111 @@
+ARISS Moderator Script Generator - Template Catalog
+===================================================
+By: Ken McCaughey (N3FZX)  
+On: 2026-02-04   
+Ver 4.0.0   
+
+
+The moderator script generator tool comes with a set of template script 
+files. These will produce fully functional scripts that cover most 
+ARISS contact needs. The wording is generic enough for both school and 
+non-school based events. Moderators are encouraged to edit the 
+`ARISS_mod_script_temp.docx` file for their event. Just be aware of the
+amount of change can alter the timing from defaults. Be sure to check 
+the timing and update the form file as needed.
+
+The provided `docx` templates have a version date on the bottom of the 
+cover page. Compare this to the versions posted in **GitHub** to be sure 
+you are using the latest templates.
+
+There are two basic versions; long and short. 
+
+The difference is the inclusion of the two optional ARISS videos, or not. 
+At the bottom of the template cover page is version information 
+indicating the original source template file name, release date, and 
+author.
+
+To efficiently use this catalog, it is best to first determine if the 
+two optional videos will be presented or not. Based on that, choose the 
+template. Be sure to edit the form file to correctly indicate which video 
+is being used. 
+
+Note that this catalog, and/or the templates, might be updated 
+independently from any updates to the script tool (Python program). 
+If you need/want a different template, contact this author.
+
++--------------+--------------+----------------------------+------------+
+|    Video 1   |    Video 2   | Script Template            | Event #8/9 |
+|     ARRL     | Nicole Ayres | ARISS_mod_script_temp_...  | Editing?   | +==============+==============+============================+============+
+|     Yes      |     Yes      | ...master_universal.doc    |    Yes     |
+|     Yes      |     Yes      | ...master_translation.docx |    Yes     |
+|     Yes      |     Yes      | ...master_long.docx        |    No      |
+|     Yes      |     No       | ...master_video1.docx      |    No      |
+|     No       |     Yes      | ...master_video2.docx      |    No      |
+|     No       |     No       | ...master_short.docx       |    No      |
+|     No       |     No       | ...master_timeline.docx    |    No      |
++--------------+--------------+----------------------------+------------+
+
+
+TEMPLATES (in alphabetical order)
+---------
+
+ARISS_mod_script_temp_master_long.docx - Ver. 2026-02-04, by N3FZX
+
+	This is based on the universal template and includes both of the 
+	optional videos. This template is streamlined with some redline 
+	notes removed for the video events. If using this template, be 
+	sure the form file indicates "Yes" for both videos.
+
+
+ARISS_mod_script_temp_master_short.docx - Ver. 2026-02-04, by N3FZX
+
+	This is based on the universal template without either of the 
+	optional videos. This closely matches a traditional ARISS contact 
+	script. If using this template, be sure the form file indicates 
+	"No" for both videos. Note that Events #8 and #9 are not used and 
+	should have a zero time duration.
+
+
+ARISS_mod_script_temp_master_translation.docx - Ver. 2026-02-04, by N3FZX
+
+	This is a new experimental one based on the universal template, but 
+	with provisions for including language translations. This includes 
+	both optional videos. The video events have some redline notes to help 
+	the author. This can be tailored for any combination of optional 
+	videos. The form file video usage must be set to match.
+
+
+ARISS_mod_script_temp_master_universal.docx - Ver. 2026-02-04, by N3FZX
+
+	All the templates included here are derived from this one. This 
+	includes both optional videos. The video events have some redline
+	notes to help the author. This can be tailored for any combination 
+	of optional videos. The form file video usage must be set to match.
+
+
+ARISS_mod_script_temp_master_video1.docx - Ver. 2026-02-04, by N3FZX
+
+	This is based on the universal template with only the first of the  
+	optional videos. If using this template, be sure the form file 
+	indicates "Yes" for the first video and "No" for the second video.
+	Note that Event #9 is not used and should have a zero time
+	duration.
+
+
+ARISS_mod_script_temp_master_video2.docx - Ver. 2026-02-04, by N3FZX
+
+	This is based on the universal template with only the second of the  
+	optional videos. If using this template, be sure the form file 
+	indicates "No" for the first video and "Yes" for the second video.
+	Note that Event #8 is not used and should have a zero time
+	duration.
+
+
+ARISS_mod_script_temp_master_timeline.docx - Ver. 2026-02-04, by N3FZX
+
+	This is an experimental template based on the universal template. It 
+	only includes the cover page, first page with the event timeline table, 
+	and the last page with the logistics. This might be useful in planning
+	and don't want all the other pages just yet.
+	
+	

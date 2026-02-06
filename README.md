@@ -1,22 +1,23 @@
-ARISS Moderator Script Generator - READ ME
-==========================================
+ARISS Moderator Script Generator - README
+=========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-06-14   
-Ver 3.1.0   
+On: 2026-02-04   
+Ver 4.0.0   
 
 <!-- In MarkDown format. -->
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
 
 Contents
 --------
-* Goals  
-* Disclaimer  
+* Goals   
 * How It Works  
 * Setup  
-* Instructions and Work Flow  
+* Instructions and Work Flow  **<-- Lots of useful info here!**
+* Suggestions for Best Success  **<-- Lots of useful info here!**
+* Known Issues and Troubleshooting Tips
 * Notes About the Moderator Script Format  
 * Dictionary of Script Document Variables
-* Known Issues and Tips
+
 
 Goals
 -----
@@ -25,20 +26,12 @@ This tool is intended to help ARISS moderators create a script for ISS telebridg
 The goals of this tool are to:    
 1. Have good consistent formatting that is easy to read and follow.  
 2. Have all the checklists and important details included.  
-   These are often not included in ARISS scripts, thus more ad-lib.  
 3. Automate filling out the template to ensure accuracy.   
 4. Produce an event timeline outline to support event planning.  
 5. Automate the calculation of the event timeline. No manual time math!  
 6. Allow for easy customization for contact needs.   
 7. Speed up the script generation time.  
 8. Provide predictability for mentors and moderators.  
-
-
-Disclaimer
-----------
-
-This free software is provided as is.  
-
 
 <div style="page-break-after: always;"></div>
 
@@ -73,30 +66,30 @@ Before you begin, make sure things are set up correctly.
 
 1. **DOWNLOAD** from **GitHub** the files as a Zip file 
 
-	- **GET** the latest version at: https://github.com/twk6809/ARISS_mod_script_gen 
+    - **GET** the latest version at: https://github.com/twk6809/ARISS_mod_script_gen 
 
-	- **CLICK** on the green `<> Code` button and choose `Download ZIP`.
-	
+    - **CLICK** on the green `<> Code` button and choose `Download ZIP`.
+    
 2. **UNZIP** and and folder called `ARISS_mod_script_gen-main` will appear.  
-	  
+      
    The following files in a folder called `ARISS_mod_script_gen-main`:  
-	  
-	  - `README.md` and/or `README.pdf` - this file  
+      
+      - `README.md` and/or `README.pdf` - this file  
       - `HELPER.md` and/or `HELPER.pdf` - more help with Python  
       - `ARISS_Python_Test.py` - test script  
       - `Working` - folder with the main files  
       - `Examples` - folder with sample output files  
       - `Templates` - folder with `docx` script template files  
-	
+    
 3. **MOVE** the folder structure to where ever you want it.
 
 <div style="page-break-after: always;"></div>
    
 4. **CHECK** that you have Python 3.x is installed. 
 
-	 - **ENTER** `python3 --version` in a terminal window.  
-	   (Note: Depending on your OS and how Python is configured,
-	    the command to use might be `python3` or `python` or `py`.)
+     - **ENTER** `python3 --version` in a terminal window.  
+       (Note: Depending on your OS and how Python is configured,
+        the command to use might be `python3` or `python` or `py`.)
 
      - **INSTALL** if needed. See https://www.python.org/downloads/  
        (Also see the **HELPER** file.)
@@ -108,7 +101,7 @@ Before you begin, make sure things are set up correctly.
        (Need to be in your virtual environment if you have one.)
 
      - **INSTALL** using `pip install docxtpl` or 
-       `python3 -m pip install docxtpl`.
+       `python3 -m pip install docxtpl`.  
        (Also see https://pypi.org/project/docxtpl/ or the **HELPER** file.)
 
 6. **RUN** the test script to confirm needed libraries are present.
@@ -117,25 +110,25 @@ Before you begin, make sure things are set up correctly.
      
      - **RUN** test script: `python3 ARISS_Python_Test.py`  
        (Note: Depending on your OS and how Python is configured,
-	    the command to use might be `python3` or `python` or `py`.)
+        the command to use might be `python3` or `python` or `py`.)
      
      - **CHECK** Output. Should reassemble...
 
-	 ```
-	 Python script: ARISS Python Test.py
-	            V.: 1.1.0
-	            By: Ken McCaughey, N3FZX
-	            On: 2025-02-16
+     ```
+     Python script: ARISS Python Test.py
+                V.: 1.1.0
+                By: Ken McCaughey, N3FZX
+                On: 2025-02-16
 
-	 This is a simple test script for new Python users.
-	 It is intended to make sure scripts can be executed.
+     This is a simple test script for new Python users.
+     It is intended to make sure scripts can be executed.
 
-	 Hello World!
+     Hello World!
 
-	 The current date and time is 2025-02-16 11:18:55.113509
+     The current date and time is 2025-02-16 11:18:55.113509
 
-	 Success! Congratulations, you just ran a Python script.
-	 ```
+     Success! Congratulations, you just ran a Python script.
+     ```
      
 <div style="page-break-after: always;"></div>
 
@@ -147,19 +140,19 @@ Instructions and Work Flow
    - **COPY** the `Working` folder to a new folder named for the ARISS event
      or school name. 
      
-```    
-	Python_Projects
-	├── ARISS_mod_script_gen-main
-	│   ├── Examples
-	│   ├── Templates           <-- Make copies of templates as needed
-	│   ├── Working             <-- Make copies of this folder
-	│   ├── My_school_event_1   <-- Copy of "Working" folder
-	│   ├── My_school_event_2   <-- Another copy of Working folder
-	|
-	└── venv                    <-- Python virtual environment
-```
+    ```    
+    Python_Projects
+    ├── ARISS_mod_script_gen-main
+    │   ├── Examples
+    │   ├── Templates           <-- Make copies of templates as needed
+    │   ├── Working             <-- Make copies of this folder
+    │   ├── My_school_event_1   <-- Copy of "Working" folder
+    │   ├── My_school_event_2   <-- Another copy of Working folder
+    |
+    └── venv                    <-- Python virtual environment
+    ```
      
-   - **CHECK** for these two files in the working folder:
+   - **CHECK** for these two required files in the working folder:
         * `ARISS_mod_script_gen.py`
         * `ARISS_mod_script_form_blank.txt`
 
@@ -176,12 +169,13 @@ Instructions and Work Flow
 
    - **COPY** the desired master `docx` template file to be used in the working
      folder created in step 1. See the `Templates` folder for some options. 
+     The `Template_Catalog` file will have descriptions.
+     
+   - **RENAME** the master template file to `ARISS_mod_script_temp.docx`. 
+     The working template file will be edited.
      
         * For example, copy and rename `ARISS_mod_script_temp_master.docx` 
           to `ARISS_mod_script_temp.docx`. 
-          
-        * The working template needs to be in the same working folder as 
-          the Python script. The working template will be edited.
      
    - **NOTE**, there is a useful checklist on the last page of the template file.
        
@@ -191,20 +185,6 @@ Instructions and Work Flow
 
    This should be done by the mentor and/or moderator. There are instructions
    within the file. Fill out as much as you can using a text file editor. 
-   
-   To get a usable or first draft outline, only the `Script version`, 
-   `Important Dates and Times`, and the `School/group name` need to be 
-   completed in the form file.
-     
-   - **ENTER** the following to get started:
-        * Version number (start at 1)  
-        * Short name to append to output file names (keep short, no spaces)  
-        * ISS rise times (UTC and local)  
-        * Conference start times (UTC and local)  
-        * School time zone abbrviation
-        * School name  
-        * Telebridge name/callsign  
-        * Which video(s) are planned   
       
    - Do **NOT** leave blank variables.
         * Leave the default values to be filled in later.
@@ -226,15 +206,12 @@ Instructions and Work Flow
      
    - **REMOVE** unused/optional blocks, such as the videos.
         * **DELETE** table row to remove an optional event block.
-		* Do **NOT** add more event blocks or change the event block 
-		  names or numbers.
-   	     
-   - **REMOVE** the red colored text script notes.
-   
-<div style="page-break-after: always;"></div>
+        * Do **NOT** add more event blocks or change the event block 
+          names or numbers.
+         
+   - **REMOVE** the red colored text script notes after reading/following them.
        
 6. **RUN** the Python script using an IDE or at the command line.  
-   See the `HELPER` file for information on running Python.
 
    - **CHECK** input files. The two input files must be in the same folder 
      as the Python script. The files must have the following names:  
@@ -242,49 +219,57 @@ Instructions and Work Flow
         * Working form: `ARISS_mod_script_form.txt` 
 
    - **ENTER** `python3 ARISS_mod_script_gen.py` on the command line. 
+     See the `HELPER` file for information on running Python.
 
    - **CHECK** for messages to scroll across the screen. There is limited 
-     error checking. (See **Known Issues and Tips** below). It will report 
-     success if there were no errors. See below.
+     error checking. See **Known Issues and Troubleshooting Tips** below if
+     problems are encountered. It will report success if there were no errors. 
+     See sample output below.
      
-  	 ```
-	 Python script: ARISS_mod_script_gen.py
- 	           V.: 3.1.0
-  	          By: Ken McCaughey, N3FZX
-  	          On: 2025-05-20
+    ```
+    Python script: ARISS_mod_script_gen.py
+               V.: 4.0.0
+               By: Ken McCaughey, N3FZX
+               On: 2026-02-04
 
-	 This tool creates an ARISS Moderator Script.
-	 It reads data from a form text file and a MS-Word docx template file.
-	 Then generates a complete script and timeline report.
+    This tool creates an ARISS Moderator Script.
+    It reads data from a form text file and a MS-Word docx template file.
+    Then generates a complete script and timeline report.
 
-	 Required Input Files:
-	   Moderator form  --> ARISS_mod_script_form.txt
-	   Script template --> ARISS_mod_script_temp.docx
+    Required Input Files:
+      Moderator form  --> ARISS_mod_script_form.txt
+      Script template --> ARISS_mod_script_temp.docx
 
-	 Blank moderator form text file generated...
-	 Form text file found...
-	 Form text file read...
-	 Output filenames generated...
-	 Timeline calculations complete...
-	 Outline report file generated...
-	 Variable dictionary updated...
-	 Template file found...
-	 New moderator script generated...
+    Blank moderator form text file generated...
+    Form text file found...
+    Form text file read...
+    Output filenames generated...
+    Timeline calculations complete...
+    Time check...
+      Conf start time: 02:00
+      ISS rise time: 04:00
+      Time check: Good
+    Outline report file generated...
+    Variable dictionary updated...
+    Template file found...
+    New moderator script generated...
 
-	 Output Files Created:
-	   Blank form file --> ARISS_mod_script_form_blank.txt
-	   Outline report  --> ARISS_mod_script_outline_Example_V1.txt
-	   Complete script --> ARISS_mod_script_Example_V1.docx
+    Output Files Created:
+      Blank form file --> ARISS_mod_script_form_blank.txt
+      Outline report  --> ARISS_mod_script_Example_V1_outline.txt
+      Complete script --> ARISS_mod_script_Example_V1.docx
 
-	 Success!
+    Success!
 
-	 Python Script Done
-	 ```
+    Python Script Done
+    ```
 
    - **NOTE** two new files will be generated. If they already existed, they 
      will be overwritten. These are the final product files.  
         * `ARISS_mod_script_<short_name>_V<ver#>.docx`  
-        * `ARISS_mod_script_outline_<short_name>_V<ver#>.txt`  
+        * `ARISS_mod_script_<short_name>_V<ver#>_outline.txt`  
+
+<div style="page-break-after: always;"></div>
 
 7. **OPEN** the new moderator script file and review it for completeness and 
    correctness.
@@ -296,32 +281,16 @@ Instructions and Work Flow
         * Are all the variables (in bold text) filled in correctly?
         * Are there any unexpected default variables, i.e. `{{variable}}`?
 
-   If changes are needed, there are three ways to handle them.  
-
+8. **UPDATE**. If the moderator script needs to be updated, there are two 
+   ways to handle this. The first method is the preferred path.
+   
+   - **EDIT** the working template file, and/or form file. Be sure to update 
+     the version number variable in the form file. **RERUN** the Python script. 
+     New `docx` and outline files will be created overwriting the old ones.
+   
    - **EDIT** the moderator script directly and save. This is best path for 
-     minor edits if no more edits are anticipated and the Python script 
-     will not be re-run.  
-       
-   - **EDIT** the working template file and rerun the Python script. New 
-     `docx` and outline files will be created overwriting the old ones.
-   
-   - **UPDATE** the form text file and **RERUN** the Python script if it is
-     related  to a variable. New `docx` and outline files will be created 
-     overwriting the old ones.
-
-8. **UPDATE**. If a version of the moderator script was distributed and needs
-   to be updated, there are two ways to handle this.  
-
-   - **EDIT** the generated script `docx` file directly. Be sure to change the
-     version number on script cover page. Save with a new filename changing 
-     the version number. This is a good option for minor final edits.
-   
-   - **UPDATE** the form text file and **RERUN** the Python script if it is
-     related to a variable. Be sure to update the version number variable in 
-     the form. Then rerun the Python script. New `docx` and outline files 
-     will be created overwriting the old ones.
-
-<div style="page-break-after: always;"></div>
+     minor edits IF no more edits are anticipated and the Python script 
+     will not be re-run. 
 
 9. **DISTRIBUTE** the script.
 
@@ -330,18 +299,141 @@ Instructions and Work Flow
    - **SEND** out. OK to send the `docx` version, PDF recommend as well. PDF 
      cannot be changed and its format/fonts are fixed.
      
-10. **REVISE** a distributed version if needed...
+<div style="page-break-after: always;"></div>
 
-    - **EDIT** the form file, change the version number and anything else.
-   
-    - **EDIT** the template file as needed.
-   
-    - **RUN** the Python tool.
-   
-    - **REVIEW** output files.
-   
-    - **MAKE** PDF and distribute.   
-     
+Suggestions for Best Success
+----------------------------
+
+These suggestions for mentors and moderators are based on observations 
+and lessons learned from past experience.
+
+1. The script generation tool is intended for the use by ARISS mentors 
+and moderators. Is is not intended for use by the school/groups themselves. 
+
+2. Getting Python setup can be a challenge for some. Please ask for help.
+Users do NOT need to know Python to make this tool work! Plan on taking 
+some time to become familiar with how the tool works. It is recommended 
+that users play with the tool well in advance of needing to use it for a 
+contact. Once Python is setup, it is pretty easy to use and upgrade.
+
+3. The resulting moderator script is best viewed as an **ARISS script**
+for managing the **ARISS portions** of the event. If the school/group has 
+a program planned for Event #5, the details are best NOT included in the 
+script. The script only needs to capture the start and end times of what the 
+school/group wants to do. This greatly simplifies the script production and 
+decouples it from any plans not directly relevant to the ARISS portion of 
+the event.
+
+4. If extra activities are being planned by the school/group for the event, 
+they are best to be scheduled before the start of the conference, within 
+the time constraints of Event block #5, the **School/Event Program**, and/or 
+after the concluding ARISS remarks. This minimizes potential timing errors 
+and reduces the risk of upsetting the look and feel of the final script.
+
+5. To get the quickest turn around time, it is best to minimize changes to 
+the templates. Adding significant amounts of new content is discouraged, 
+especially if time is short. Picking the right template speeds up publication.
+
+6. It is recommended to NOT include the conference credentials or the any 
+live stream links in the script. It is best NOT to attempt to duplicate 
+critical information from e-mails, as this is error prone and more work when 
+late changes occur.
+
+7. The script tool and templates are built around a fixed number of event 
+blocks. These should not be renumbered nor more added. Unneeded blocks can 
+be removed (i.e. for videos), but the remaining blocks should not be 
+renumbered. This preserves the timing and behind the scenes time math. 
+Event blocks should never exceed one page in length. 
+
+8. The time zone abbreviation and UTC time offset are for informational 
+purposes only. These values are NOT error checked or used in any of the 
+time math. The time math is based on the `ISS rise in event local time` and 
+`Start of conference in event local time`. The UTC times are likewise 
+informational. These should be check carefully.
+
+<div style="page-break-after: always;"></div>
+
+9. Pay attention to the status of the ARISS videos in the form file. 
+Selecting the ARISS videos, or not, in the form file only affects the 
+timeline calculations (time math). It does not affect the content of the 
+template. Either the correct template needs to be selected (i.e. long vs. 
+short), or the universal template can be adjusted accordingly for the ARISS 
+videos planned.
+
+10. The templates were intentionally designed to be readable if printed on a 
+black and white printer. Be cautious if adding colors or highlights as the 
+readability can be compromised if a color printer is not used. What looks 
+good on a computer screen may not turn out the same when printed.
+
+
+Known Issues and Troubleshooting Tips
+-------------------------------------
+
+**If you get errors or have issues take a look below first.**
+
+Always run the tool in a command line window so that you can see any error 
+messages that are generated.
+
+1. The correct **Python** command to be used at the command line depends 
+on your system's configuration and the desired Python version. It could be
+`python` or `python3` or `py`.  On many systems, `python` is aliased to
+`python3`, meaning both commands will run Python 3. However, it's not 
+universally true, and some systems might still have `python` pointing to 
+Python 2 or not aliased at all. To ensure you are using Python 3, it is 
+best to use `python3`, except for Windows. On Windows, you can use `py` 
+as a generic launcher, and specify the version using switches like `py -3` 
+for Python 3. You can also use `python` or `python3` if they are correctly
+configured in your system's PATH environment variable. This document refers 
+to `python3` for command line entries. Substitute the command your system 
+is setup for.
+
+2. The tool can fail if the input **file names** are not as expected. The 
+input file names are fixed in the Python code. Check spelling for file names.
+
+3. Most **errors** are likely to be made in the form file. If this occurs 
+the tool will give you some clues, starting with the first line that has an 
+issue. To start, check for blank variables. Check for proper date and time 
+formatting. Check for erroneous text or comments missing leading "#". 
+Check field name spelling, for missing colon, or missing space after colon. 
+Use `ARISS_mod_script_form_blank.txt` as a reference if needed.
+
+4. Misspelled field or **variable** name(s) in the form, or the template, 
+will not get properly populated. Do not change the field or variable names. 
+If new ones are needed, contact the author.
+
+<div style="page-break-after: always;"></div>
+
+5. There is limited error checking for times. A **time error** message will 
+occur if the conference start time is after ISS rise time. Times must be in 
+the 24 hour format. A **time error** message will also occur if there is not 
+enough time for all the events. This would be due to the conference time 
+starting too late with respect to ISS rise time. The fix is to correct the 
+times in the form file. 
+
+6. If a **variable** never seems to get updated in the script, a field name 
+in the form file may have been corrupted. The tool has default variables for 
+each field name in the form file. If a field name becomes misspelled in the 
+form file, it gets ignored and the default value (usually in the form of 
+`{{varialbe}}`) is used and placed in the script. 
+
+7. If running in **Thonny**, make sure the `ARISS_mod_script_gen` tab is 
+active before clicking on `Run`. If another tab, such as the form is open 
+and the active tab, it will try to run what is in the form, which is not 
+Python, and generate lots of errors. This is easy to do! 
+
+8. If the **form file** becomes corrupted the tool will fail. Corruptions 
+could be an inadvertently changed variable name, invalid date/time format, 
+a carriage return (line break) in the middle of a variable, or using a form 
+file from an older version of the tool. To recover is to delete the form 
+file and an make a new one from the `ARISS_mod_script_form_blanl.txt` file. 
+Whenever the tool is run a new blank form is created. 
+
+9. In the **form file**, do not use the `#` character in any variables. 
+This is interpreted at a comment and ignores everything afterwards until a 
+carriage return (line break).
+
+10. Feel free to post `Issues` on **GitHub** or leave comments and feature
+suggestions in the `Discussion` area.
 
 <div style="page-break-after: always;"></div>
 
@@ -368,15 +460,15 @@ Notes About the Moderator Script Template Format
   helpful to turn on the "view table gridlines" feature to see the hidden 
   boarders. 
 
-  
+
 Dictionary of Script Document Variables
 ---------------------------------------
 
 The form file is the vehicle to specify the variable values for the 
 script. The form consists of a list of field names and variables pairs. 
 
-	Field name: {{variable}}  =  field/variable pair
-	
+    Field name: {{variable}}  =  field/variable pair
+    
 The variables take the form of double braces around a variable name (i.e. 
 field name `ISS callsign to be used` variable is `{{ISS_callsign}}`). 
 These names are fixed in the Python script and should not be changed.
@@ -395,21 +487,33 @@ list below (not including the calculated timing variables).
 
 <div style="page-break-after: always;"></div>
 
-**The field/variable pairs marked with a * at the end are included by**
+**The field/variable pairs marked with a "*" at the end are included by**
 **default in the form file.**
+
+To use a field/variable pair not included by default, follow this two step 
+process:
+
+1. Edit the form file and copy the desired pair from the list below.   
+2. Then use the variable in the script template file.  
+
+For example copy/paste **School teacher name: `{{teacher_name}}`** as a new
+line in the form file. Then assign a value for the `{{teacher_name}}` 
+variable (i.e Ms. Brooks). In the template file place the variable 
+`{{teacher_name}}` where you want it to appear. When the tool is run the 
+teacher's name will be populated in the script.
 
 #### Script version
 Script version: `{{version}}`  *  
 
 #### School/Group Information  
-School/group name: `{{school_group_name}}`  *  
-School/group location: `{{school_group_city_state}}`  *  
-Coordinator/teacher at venue: `{{school_coordinator_name}}`  *   
-School principal name: `{{principal_name}}`  *  
-School teacher name: `{{teacher_name}}`  *  
-School/group presenter name: `{{presenter_name}}` *  
-Venue phone number: `{{school_coordinator_phone}}`  
-Emergency back-up phone number: `{{school_coordinator_backup_phone}}`  
+School/group name: `{{group_name}}`  *  
+School/group location: `{{group_city_state}}`  *  
+Coordinator at event: `{{group_coordinator_name}}`  *   
+School principal name: `{{principal_name}}`   
+School teacher name: `{{teacher_name}}`  
+School/group presenter name: `{{presenter_name}}`  *  
+Event phone number: `{{event_phone}}`  
+Emergency back-up phone number: `{{event_backup_phone}}`  
 
 #### ISS Information  
 Astronaut name: `{{astronaut_name}}`  *  
@@ -422,24 +526,24 @@ Moderator callsign: `{{moderator_callsign}}`  *
 Moderator phone number: `{{moderator_phone}}`  
 Moderator will be On-site/Remote for the contact: `{{moderator_location}}`  *  
 
+<div style="page-break-after: always;"></div>
+
 #### ARISS Mentor Information  
 Mentor name: `{{mentor_name}}`  *  
 Mentor callsign: `{{mentor_callsign}}`  *  
 Mentor phone number: `{{mentor_phone}}`  
 Mentor will be On-site/Remote for the contact: `{{mentor_location}}`  *  
 
-<div style="page-break-after: always;"></div>
-
-#### ARISS Tele-bridge Information  
-Tele-bridge station callsign: `{{telebridge_callsign}}`  *  
-Tele-bridge station location: `{{telebridge_location}}`  *  
-Tele-bridge station telephone number: `{{telebridge_phone}}`  
-Tele-bridge operator name: `{{operator_name}}`  *  
-Tele-bridge operator callsign: `{{operator_callsign}}`  *  
-Tele-bridge operator phone number: `{{operator_phone}}`  
-Tele-bridge support name(s) and callsign(s): `{{support_names_callsigns}}`  
-Tele-bridge audio interface): `{{audio_interface}}`  *  
-Tele-bridge video interface: `{{telebridge_video}}`  *  
+#### ARISS Ground Station/Telebridge Information  
+Ground station callsign: `{{gnd_sta_callsign}}`  *  
+Ground station location: `{{gnd_sta_location}}`  *  
+Ground station telephone number: `{{gnd_sta_phone}}`  
+Ground station operator name: `{{gnd_sta_op_name}}`  *  
+Ground station operator callsign: `{{gnd_sta_op_callsign}}`  *  
+Ground station operator phone number: `{{gnd_sta_phone}}`  
+Ground station support name(s) and callsign(s): `{{support_names_callsigns}}`  
+Ground station audio interface): `{{gnd_sta_audio}}`  *  
+Ground station video interface: `{{gnd_sta_video}}`  *  
 
 #### ARISS Optional Videos
 Contact from student perspective (Yes/No): `{{student_video}}`  *  
@@ -448,16 +552,17 @@ Contact from the ISS perspective (Yes/No): `{{ISS_video}}`  *
 #### Live Streaming
 Live steam planned (Yes/No): `{{livestream_plan}}`  *  
 Live stream operator name: `{{livestream_name}}`  *  
-Live stream operator callsign: `{{livestream_callsign}}`  *  
+Live stream operator callsign: `{{livestream_callsign}}`  
 Live stream operator phone number: `{{livestream_phone}}`  
 
 #### Fixed Timing
 Contact date: `{{contact_date}}`  *  
-Event time zone: `{{etz}}` *  
-Start of conference in UTC: `{{conf_utc}}`  *  
-Start of conference school time: `{{conf_sch}}`  *  
-ISS rise time in UTC: `{{AOS_UTC}}`  *  
-ISS rise time in school time: `{{AOS_sch}}`  *  
+Conference start, event local time (HH:mm): `{{conf_etz}}`  *  
+ISS rise predict, event local time (HH:mm): `{{AOS_etz}}`  *  
+Conference start, UTC time (HH:mm): `{{conf_utc}}`  *  
+ISS rise predict, UTC time (HH:mm): `{{AOS_UTC}}`  *  
+Event time zone abbreviation (CAPS): `{{etz}}` *  
+Event time zone shift to UTC (+/-HH): `{{TZ_shift}}`  *  
 
 <div style="page-break-after: always;"></div>
 
@@ -481,114 +586,11 @@ report file. These cannot be used in the form file.
 | Introduce the ground station    | `{{T10}}`    | `{{D10}}` | `{{R10}}` |
 | Handover to ground station      | `{{T11}}`    | `{{D11}}` | `{{R11}}` |
 | ISS rise and AOS                | `{{T12}}`    | `{{D12}}` | `{{R12}}` |
-| ISS Contact!                    | `{{AOS_sch}}`| -         |     -     |
+| ISS Contact!                    | `{{AOS_etz}}`| -         |     -     |
 | ISS set and  LOS                | `{{T13}}`    | -         |     -     |
 | Closing & end of ARISS program  | `{{T13}}`    | `{{D13}}` |     -     |
 | Contact preparation duration    | -            | `{{D14}}` |     -     |
 | Shool/group program duration    | -            | `{{D15}}` |     -     | 
 | ARISS program duration          | -            | `{{D16}}` |     -     |
 | Total event duration            | -            | `{{D17}}` |     -     |
-
-
-<div style="page-break-after: always;"></div>
-
-Known Issues and Tips
----------------------
-
-**If you get errors or have issues take a look below first.**
-
-This tool is intended for the use by ARISS mentors and moderators. Is is
-not intended for use by the schools themselves. This is also designed for
-telebridge contacts, not direct contacts.
-
-The correct Python command to be used at the command line depends 
-on your system's configuration and the desired Python version. It could be
-`python` or `python3` or `py`.  On many systems, `python` is aliased to
-`python3`, meaning both commands will run Python 3. However, it's not 
-universally true, and some systems might still have `python` pointing to 
-Python 2 or not aliased at all. To ensure you are using Python 3, it is 
-best to use `python3`, except for Windows. On Windows, you can use `py` 
-as a generic launcher, and specify the version using switches like `py -3` 
-for Python 3. You can also use `python` or `python3` if they are correctly
-configured in your system's PATH environment variable. This document refers 
-to `python3` for command line entries. Substitute the command your system 
-is setup for.
-
-Most errors are likely to be made in the form file. If this occurs the tool
-will give you some clues, starting with the first line that has an issue. 
-To start, check for blank variables. Check for proper date and time 
-formatting. Check for erroneous text or comments missing leading "#". 
-Check field name spelling, for missing colon, or missing space after colon. 
-Use ARISS_mod_script_form_blank.txt as a reference if needed.
-
-If a variable never seems to get updated in the script, a field name in the 
-form file may have been corrupted. The tool has default variables for each 
-field name in the form file. If a field name becomes misspelled in the form 
-file, it gets ignored and the default value (usually in the form of 
-`{{varialbe}}`) is used and placed in the script. 
-
-The tool can generate an outline report with just the **ISS rise time** and
-the **conference start time**. The script will be very incomplete, but the
-outline file is usable to aid in early event planning.
-
-The bulk of the template script documents are built as a table. You may need 
-to turn on the view table gridline feature in Word to see this more clearly. 
-(To show the gridlines, in Word, click the View tab, and then select the
-Gridlines check box.) I did this because it helps to enforce a format where 
-each event block is all on the same page without a page break. This makes for
-execution at the expense of more pages. This also means the contents of each
-event section needs to be less than one page long. This can also leave some 
-extra white space (good for notes!).
-
-If running in Thonny, make sure the `ARISS_mod_script_gen` tab is active 
-before clicking on `Run`. If another tab, such as the form is open and the
-active tab, it will try to run what is in the form, which is not Python, 
-and generate lots of errors. This is easy to do! 
-
-The tool can fail if the expected file names are not as expected. The input 
-file names are fixed in the Python code. Check spelling for file names.
-
-Misspelled field or variable name(s) in the form, or the template, will not 
-get properly populated. Do not change the field or variable names. If new 
-ones are needed, contact the author.
-
-If the value of a variable in the form is not known, or not going to be 
-used, do not change the value in the form. For example if the live stream
-operator will not be used, leave form default value as `{{livestream_name}}`.
-
-If the form file becomes corrupted the tool will fail. Corruptions could
-be an inadvertently changed variable name, invalid date/time format, a
-carriage return (line break) in the middle of a variable. One sure way to
-recover is to delete the form file and an make a new one from the
-`ARISS_mod_script_form_blanl.txt file`. Whenever the tool is run a new 
-blank form is created. 
-
-In the form file, do not use the `#` character in any variables. This is
-interpreted at a comment and ignores everything afterwards until a carriage
-return (line break).
-
-Over time more templates may be added, or they maybe updated. You can
-create your own versions to suit your needs. Just be aware the tool is 
-built around event blocks that take discrete amounts of time to complete. 
-If you deviate from the formula of this design it can create more work and
-good results cannot be guaranteed. If you strongly desire an much different
-looking template, please contact the author.
-
-Pay attention to the status of the ARISS videos in the form file. The use,
-or not, of these changes the timeline calculation. For the
-`ARISS_mod_script_temp_master_short.docx` template, make sure both ARISS videos are set to `No`. For `ARISS_mod_script_temp_master_long.docx`, make
-sure both ARISS videos are set to `Yes`. 
-
-The provided `docx` templates (in the Templates folder) have a version date 
-on the bottom of the cover page. Compare this to the versions posted in 
-GitHub to be sure you are using the latest templates.
-
-To get updated files from GitHub, you have two options. First option is to
-re-download the whole package as a Zip file. The second option is one file
-at-a-time. To download a single file, first click on the file (note that 
-some files cannot be displayed). With the single file presented enter
-`ctrl+shift+s` to download.
-
-Feel free to post `Issues` on GitHub or leave comments in the `Discussion` 
-area.
 

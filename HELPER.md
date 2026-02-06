@@ -1,28 +1,27 @@
 ARISS Moderator Script Generator - Helper
 =========================================
 By: Ken McCaughey (N3FZX)  
-On: 2025-06-14   
-Ver 3.1.0   
+On: 2026-02-04   
+Ver 4.0.0   
 
 <!-- In MarkDown format. -->
 <!-- Page breaks set for MarkText, US letter, with 10 top & bot.-->
 
-This file provides helpful information for users new to Python to help run 
-the ARISS Moderator Script Generator. You do not need to know Python to run 
-this tool! 
+This file tires to provides helpful information for users new to Python to 
+help run the ARISS Moderator Script Generator. You do not need to know Python 
+to run this tool! 
 
 The **README** file has information on how the tool works. This file has
-information on how to setup Python and run the tool. This is were known 
-issues are documented and additional tips reside.
+information on how to setup Python to be able to use tool. 
 
 
 Contents
 --------
 * Python
   - Suggested File Structure
+  - Python Virtual Environment
   - Installing the `docxtpl` Python Library
   - Run a Python Test Script
-  - Running `ARISS_mod_script_gen.py`
 * Thonny Python IDE
   - Installing Thonny on a Mac
   - Thonny Virtual Environment Setup
@@ -57,6 +56,73 @@ usually used at the command line. Depending on how the system is setup,
 `python` can be used. Be aware that `python` often refers to Python 2. 
 For Windows, users can use `python` or `py` at the command line. This 
 document references `python3`, but substitute what your system is setup for.
+
+### Python Virtual Environment
+
+Some OS's require a users to run Python in a virtual environment. Windows 
+and MacOS do not, Linux does. This is because some OS's use Python for 
+various OS functions (true for Linux). To prevent the user from corrupting 
+OS dependent Python components, a separate "sandbox" area is created. This 
+is easy to setup once Python is installed.
+
+For information on the Python virtual environment see: 
+
+https://docs.python.org/3/library/venv.html  
+
+https://realpython.com/python-virtual-environments-a-primer/  
+
+<div style="page-break-after: always;"></div>
+
+#### Setup Virtual Environment
+
+To setup for Linux, at a command line terminal enter:
+
+    python3 -m venv /path/to/new/virtual/environment
+ 
+To setup for Window, at a command line terminal (i.e. DOS window) enter:
+
+    python -m venv C:\path\to\new\virtual\environment
+
+To setup for MacOS, at a command line terminal enter:
+
+    python3 -m venv /path/to/new/virtual/environment    
+ 
+#### Activate Virtual Environment
+
+In the command line terminal, change folders into the `venv` folder created
+above.
+
+For Linux and MacOS, in the command line terminal, enter:
+
+    $ source venv/bin/activate
+    (venv) $
+
+For Windows, in the command line terminal, enter:
+
+    PS> venv\Scripts\activate
+    (venv) PS>
+
+Note the new prompt. From here you can run the `pip` tool to install Python
+libraries. For example: 
+
+    (venv) $ python -m pip install <package-name>
+
+Run Python scripts from here are well. 
+
+<div style="page-break-after: always;"></div>
+
+#### Deactivate Virtual Environment
+
+For Linux and MacOS, in the command line terminal, enter:
+
+    (venv) $ deactivate
+    $
+
+For Windows, in the command line terminal, enter:
+
+    (venv) PS> deactivate
+    PS>
+
 
 ### Suggested File Structure
 
@@ -132,71 +198,21 @@ Success! Congratulations, you just ran a Python script.
 	
 <div style="page-break-after: always;"></div>
 
-### Running `ARISS_mod_script_gen.py`
-
-To run the tool, open a terminal and at the command line enter:
-
-	python3 ARISS_mod_script_gen.py
-	
-It runs fast and is not interactive. A number of lines of messages will 
-stream down the window. It will resemble the example below in the Thonny
-section. You can scroll up to see what you may has missed. If it ends with
-`Success!` then you are all set.
-
-There should now be more or updated files in the `ARISS_mod_script_gen` 
-folder. The files of interest are the script and outline files.
-
-```
-Python script: ARISS_mod_script_gen.py
-           V.: 3.1.0
-           By: Ken McCaughey, N3FZX
-           On: 2025-05-20
-
-This tool creates an ARISS Moderator Script.
-It reads data from a form text file and a MS-Word docx template file.
-Then generates a complete script and timeline report.
-
-Required Input Files:
-  Moderator form  --> ARISS_mod_script_form.txt
-  Script template --> ARISS_mod_script_temp.docx
-
-Blank moderator form text file generated...
-Form text file found...
-Form text file read...
-Output filenames generated...
-Timeline calculations complete...
-Outline report file generated...
-Variable dictionary updated...
-Template file found...
-New moderator script generated...
-
-Output Files Created:
-  Blank form file --> ARISS_mod_script_form_blank.txt
-  Outline report  --> ARISS_mod_script_outline_Example_V1.txt
-  Complete script --> ARISS_mod_script_Example_V1.docx
-
-Success!
-
-Python Script Done
-```
-
-<div style="page-break-after: always;"></div>
-
 Thonny Python IDE
 -----------------
 
-Thonny is a decent basic Python Integrated Development Environment (IDE). 
+**Thonny** is a decent basic Python Integrated Development Environment (IDE). 
 It is free and runs on Linux (and Raspberry Pi's), Macs, and Windows. It 
-also bring along its own Python installation. Installing Thonny gets you 
+also bring along its own Python installation. Installing **Thonny** gets you 
 a good tool and Python in one step. This is recommended for Python 
 beginners. The software may be in your machine's software repository (or
 store). Or the files for your OS can be found at https://thonny.org/. 
-The wiki for Thonny can be found at https://github.com/thonny/thonny/wiki.
+The wiki for **Thonny** can be found at https://github.com/thonny/thonny/wiki.
 
 For Windows and the Mac it is best to install for current user only, not
 all users. This should not require admin privileges. 
 
-Once installed, turn on the file viewer. In Thonny, from the main toolbar 
+Once installed, turn on the file viewer. In **Thonny**, from the main toolbar 
 click on `View` then click to add a check mark for  `Files`. It will 
 add a sub-window to the left side. When you are running the script this 
 should be set to your working directory with all the ARISS Moderator Script
@@ -204,7 +220,7 @@ files.
 
 ### Installing Thonny on a Mac
 
-A good guide for installing Thonny on Mac is at the link below. It also 
+A good guide for installing **Thonny** on Mac is at the link below. It also 
 has some instructions for adding libraries. 
 
 https://www2.seas.gwu.edu/~cs4all/1012/editor-install/thonny-mac.html
@@ -214,7 +230,7 @@ https://www2.seas.gwu.edu/~cs4all/1012/editor-install/thonny-mac.html
 Starting with Python version 3.11, a virtual environment is required. This 
 is in essence a local container of the Python files for users to use. It
 isolates any Python files the operating system may be using to protect your
-OS. Thonny supports the virtual environment. This needs to be setup only 
+OS. **Thonny** supports the virtual environment. This needs to be setup only 
 once for Thonny. It can use used for all your Python projects. 
 
 Note that the virtual environment setup is not required under Windows.
@@ -223,8 +239,8 @@ Start by making a Python project folder, i.e. `Python_Projects`.
 Within the folder create a new empty folder called `venv`. This will be 
 the location for the user virtual environment, which will be setup below.
 
-In Thonny, from the main toolbar click on `Tools` then `Options`. It will 
-open a window. Select the `Interpreter` tab.
+In **Thonny**, from the main toolbar click on `Tools` then `Options`. It 
+will open a window. Select the `Interpreter` tab.
 
 Which kind of interpreter... should be `Local Python 3`. If not click on 
 the drop down menu and select `Local Python 3`.
@@ -232,15 +248,15 @@ the drop down menu and select `Local Python 3`.
 At the bottom right of the window find `New virtual environment`. Click on
 that, and select the `venv` folder created above.
 
-Now set Thonny to use that virtual environment. `Python executable` has a 
-drop down menu. Click on it and find the path that corresponds to the 
+Now set **Thonny** to use that virtual environment. `Python executable` has 
+a drop down menu. Click on it and find the path that corresponds to the 
 `venv` folder. Note that the path will end with something like 
 `.../Python_projects/venv/bin/python3`. Click on `OK` to close the 
 `Thonny Options` window.
 
 ### How To Add Python Libraries in Thonny
 
-In Thonny, from the main toolbar click on `Tools` then `Manage packages...`. 
+In **Thonny**, from the main toolbar click on `Tools` then `Manage packages...`. 
 A window will open up. All the installed packages are listed in a column on
 the left. These are all packages only installed in the virtual environment.
 
@@ -256,7 +272,7 @@ released. Click `Close` when done.
 ### Installing `docxtlp` Library in Thonny
 
 To install the `docxtpl` library needed by the ARISS script generator, in
-Thonny, from the main toolbar click on `Tools` then `Manage packages...`. 
+**Thonny**, from the main toolbar click on `Tools` then `Manage packages...`. 
 In the search box, enter `docxtpl`. Click on `docxtpl` in the search 
 results. Click on `Install`. Click `Close` when done.
 
@@ -271,21 +287,21 @@ Unzip the GitHub file `ARISS_mod_script_gen-main.zip`. Find the the
 
 ### Running `ARISS_mod_script_gen.py` in Thonny
 
-It is possible to associate Python files (with the `.py` ext) with Thonny. 
+It is possible to associate Python files (with the `.py` ext) with **Thonny**. 
 The method varies with OS, so it is not included here. If you do this, 
 a double click on any `.py` file can open it up in Thonny automatically.
 
-Open Thonny and on the main toolbar click on `File`, then `Open` and work 
+Open **Thonny** and on the main toolbar click on `File`, then `Open` and work 
 your way to the folder with the file `ARISS_mod_script_gen.py` and open 
 the file. It will open the Python script in its own tab.
 
-In the Thonny Files sub-window (left side) you should see all the ARISS
+In the **Thonny** Files sub-window (left side) you should see all the ARISS
 Moderator Script files. 
 
 Any of the sub-windows in Thonny can be resized. Just grab the edges with
 the mouse and drag to suit.
 
-Thonny can open and edit text files, such as the `ARISS_mod_script_form.txt`
+**Thonny** can open and edit text files, such as the `ARISS_mod_script_form.txt`
 file. It can open the outline report file as well. Clicking on any of the
 `.docx` files should open them up in MS-Word or Libre-Writer.
 
@@ -294,9 +310,9 @@ arrow) on the toolbar. Or on the toolbar click on the `Run` menu, then
 click on `Run current script...`.
 
 It runs fast and is not interactive. A number of lines of messages will 
-stream down the `Shell` sub-window. It will resemble the example below.
-You can scroll up to see what you may has missed. If it ends with `Success!` 
-then you are all set.
+stream down the `Shell` sub-window. It will resemble the example in the 
+**README** file. You can scroll up to see what you may has missed. If it 
+ends with `Success!` then you are all set.
 
 There should now be more or updated files in the `ARISS_mod_script_gen` 
 folder. The files of interest are the script and outline files.

@@ -1,0 +1,55 @@
+
+ARISS Moderator Script Outline
+==============================
+
+School / group: Madison High School
+ISS contact on: 2026-02-02
+Script version: 1
+
+Event time zone abv: EST, UTC -5
+Conference start at: 2026-02-02 12:00 EST (17:00 UTC)
+ISS rise time (AOS): 2026-02-02 13:00 EST (18:00 UTC)
+Ground station info: K6DUE, in Greenbelt. MD, USA
+
+Note: All times are local school/group time (24hr).
+      Event durations and times to ISS Rise and are in minutes (m).
+
+Contact preparation   ~22m
+School/group program  ~18m
+ARISS program/contact ~33m
+===========================
+Total event duration  ~73m
+
+Time   Dur  Rise  Event Block Description
+-----  ---  ----  -------------------------------------------------------
+12:00   3m   60m   #1 - Start conference **
+12:03   2m   57m   #2 - Moderator ground station checklist
+12:05   7m   55m   #3 - Contact preparation checklist
+12:12  10m   48m   #4 - Run through with all questioners & ground station
+12:22  18m   38m   #5 - School/group program. (Optional) **
+12:40   1m   20m   #6 - Start ARISS program **
+12:41   4m   19m   #7 - ARISS introduction
+12:45   6m   15m   #8 - Optional video from student perspective - YES
+12:51   4m    9m   #9 - Optional video from the ISS perspective - YES
+12:55   3m    5m  #10 - Introduce the ground station
+12:58   1m    2m  #11 - Handover to ground station
+12:59   1m    1m  #12 - ISS rise and Acquisition of Signal (AOS) **
+13:00  11m    0m        ISS CONTACT!
+13:11   -     -         ISS set and Loss of Signal (LOS)
+13:11   3m    -   #13 - Closing remarks & end of ARISS program
+
+** = Critical milestone times.
+
+Any events with 0m duration have been eliminated from the program,
+but are not removed from the calculation report.
+
+Based on conference call start time, ISS rise time, and ARISS 
+durations (prep & program), the school/group program time, or slack
+time, is estimated to be no more than 18 minutes starting at 12:22.
+
+Any needed event site customization or additions for the event should
+take place prior to Event #1, within the time constraints of Event #5,
+and/or after Event #13.
+
+Made Using Python ARISS Moderator Script Generator Version 4.0.0.
+
