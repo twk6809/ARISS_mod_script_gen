@@ -33,17 +33,17 @@ Note that this catalog, and/or the templates, might be updated
 independently from any updates to the script tool (Python program). 
 If you need/want a different template, contact this author.
 
-+--------------+--------------+----------------------------+------------+
-|    Video 1   |    Video 2   | Script Template            | Event #8/9 |
-|     ARRL     | Nicole Ayres | ARISS_mod_script_temp_...  | Editing?   | +==============+==============+============================+============+
-|     Yes      |     Yes      | ...master_universal.doc    |    Yes     |
-|     Yes      |     Yes      | ...master_translation.docx |    Yes     |
-|     Yes      |     Yes      | ...master_long.docx        |    No      |
-|     Yes      |     No       | ...master_video1.docx      |    No      |
-|     No       |     Yes      | ...master_video2.docx      |    No      |
-|     No       |     No       | ...master_short.docx       |    No      |
-|     No       |     No       | ...master_timeline.docx    |    No      |
-+--------------+--------------+----------------------------+------------+
++--------------+--------------+----------------------------+------------+  
+|    Video 1   |    Video 2   | Script Template            | Event #8/9 |  
+|     ARRL     | Nicole Ayres | ARISS_mod_script_temp_...  | Editing?   |   +==============+==============+============================+============+  
+|     Yes      |     Yes      | ...master_universal.doc    |    Yes     |  
+|     Yes      |     Yes      | ...master_translation.docx |    Yes     |  
+|     Yes      |     Yes      | ...master_long.docx        |    No      |  
+|     Yes      |     No       | ...master_video1.docx      |    No      |  
+|     No       |     Yes      | ...master_video2.docx      |    No      |  
+|     No       |     No       | ...master_short.docx       |    No      |  
+|     No       |     No       | ...master_timeline.docx    |    No      |  
++--------------+--------------+----------------------------+------------+  
 
 
 TEMPLATES (in alphabetical order)
