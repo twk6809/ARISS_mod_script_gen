@@ -94,7 +94,7 @@ Before you begin, make sure things are set up correctly.
      - **INSTALL** if needed. See https://www.python.org/downloads/  
        (Also see the **HELPER** file.)
 
-5. **CHECK** that you have the `docxtlp` library installed.
+5. **CHECK** that you have the `docxtpl` library installed.
 
      - **ENTER** `pip show docxtpl` or `python3 -m pip show docxtpl` 
        in a terminal window.  
